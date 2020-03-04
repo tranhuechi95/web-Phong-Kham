@@ -1,0 +1,125 @@
+/* for the nav-bar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* centre-left side text */
+.centre-left-1 {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  transform: translate(-30%, -30%);
+  font-family: Arial;
+  font-size: 30px;
+  color: #4CAF50;
+}
+
+.centre-left-2 {
+  position: absolute;
+  left: 20%;
+  top: 30%;
+  transform: translate(-30%, -30%);
+  font-family: Arial;
+  font-size: 30px;
+  color: #333;
+}
+
+.centre-left-3 {
+  position: absolute;
+  left: 20%;
+  top: 40%;
+  transform: translate(-30%, -30%);
+  font-family: Arial;
+  font-size: 25px;
+  color: #333;
+}
+
+.centre-left-4 {
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  transform: translate(-30%, -30%);
+  font-family: Arial;
+  font-size: 25px;
+  color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
