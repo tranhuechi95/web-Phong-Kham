@@ -35,43 +35,41 @@ li a:hover:not(.active) {
 }
 
 /* centre-left side text */
-.centre-left-1 {
+.centre-left-frontblock {
   position: absolute;
-  left: 20%;
+  left: 15%;
   top: 20%;
-  transform: translate(-30%, -30%);
   font-family: Arial;
-  font-size: 30px;
+  font-size: 2vw;
   color: #4CAF50;
 }
 
-.centre-left-2 {
+.centre-left {
+  border: solid;
   position: absolute;
-  left: 20%;
-  top: 30%;
-  transform: translate(-30%, -30%);
+  left: 10%;
+  top: 20%;
   font-family: Arial;
-  font-size: 30px;
+  font-size: 1vw;
   color: #333;
 }
 
-.centre-left-3 {
+.centre-centre {
   position: absolute;
-  left: 20%;
-  top: 40%;
-  transform: translate(-30%, -30%);
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%);
   font-family: Arial;
-  font-size: 25px;
+  font-size: 1vw;
   color: #333;
 }
 
-.centre-left-4 {
+.centre-right {
   position: absolute;
-  left: 20%;
-  top: 50%;
-  transform: translate(-30%, -30%);
+  right: 10%;
+  top: 20%;
   font-family: Arial;
-  font-size: 25px;
+  font-size: 1vw;
   color: #333;
 }
 
