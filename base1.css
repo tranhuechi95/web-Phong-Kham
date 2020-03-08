@@ -1,123 +1,141 @@
 /* for the nav-bar */
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+
+body {
+  font-family: sans-serif;
 }
 
-li {
-  float: left;
+/* Show whitespaces in span */
+span {
+  white-space:pre;
 }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+/* font class */
+.fontRoboLight {
+  font-family: RoboLight;
 }
 
-li a:hover:not(.active) {
-  background-color: #111;
+@font-face {
+  font-family: RoboLight;
+  src: url('fonts/Roboto-Light.ttf');
 }
 
-.active {
-  background-color: #4CAF50;
+.fontSansation {
+  font-family: Sansation;
+}
+@font-face {
+  font-family: Sansation;
+  src: url('fonts/SVN-Sansation.ttf');
 }
 
-/* Container holding the image and the text */
-.container {
-  position: relative;
-  text-align: center;
-  color: white;
+.fontRoboBold {
+  font-family: RoboBold;
 }
 
-/* centre-left side text */
-.centre-left-frontblock {
-  position: absolute;
-  left: 15%;
-  top: 20%;
-  font-family: Arial;
+@font-face {
+  font-family: RoboBold;
+  src: url('fonts/Roboto-Bold.ttf');
+}
+
+.fontRoboLightItalic {
+  font-family: RoboLightItalic;
+}
+
+@font-face {
+  font-family: RoboLightItalic;
+  src: url('fonts/Roboto-LightItalic.ttf');
+}
+
+.fontRoboReg {
+  font-family: RoboReg;
+}
+
+@font-face {
+  font-family: RoboReg;
+  src: url('fonts/Roboto-Regular.ttf');
+}
+
+/* color class */
+.colorGreen {
+  color: #43D4A1;
+}
+
+.colorBlue {
+  color: #1a3778;
+}
+
+.colorGrey {
+  color: #808080;
+}
+
+.colorWhite {
+  color: #f6f6f6;
+}
+
+.colorDarkBlue {
+  color: #0f052e
+}
+
+/* font size */
+
+.fontSize1vw {
+  font-size: 1vw;
+}
+
+.fontSize1-2vw {
+  font-size: 1.2vw;
+}
+
+.fontSize1-5vw {
+  font-size: 1.5vw;
+}
+
+.fontSize2vw {
   font-size: 2vw;
-  color: #4CAF50;
 }
 
-.centre-left {
-  border: solid;
-  position: absolute;
-  left: 10%;
-  top: 20%;
-  font-family: Arial;
-  font-size: 1vw;
-  color: #333;
+/* background color class */
+.bgGreen {
+  background-color: #43D4A1;
 }
 
-.centre-centre {
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  transform: translate(-50%);
-  font-family: Arial;
-  font-size: 1vw;
-  color: #333;
+.bgBlue {
+  background-color: #1a3778;
 }
 
-.centre-right {
-  position: absolute;
-  right: 10%;
-  top: 20%;
-  font-family: Arial;
-  font-size: 1vw;
-  color: #333;
+.bgDarkBlue {
+  background-color: #0C3B5A;
+}
+
+/* border-type class */
+.borderRound {
+  border-radius: 20px;
+}
+
+.borderBlue {
+  border-color: #1a3778;
+  border-width: medium;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Bottom left text */
-.bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
+/* align content of card-body to center */
+.card-body-DichVu {
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Top left text */
-.top-left {
-  position: absolute;
-  top: 8px;
-  left: 16px;
+/* collapsing transition class */
+.collapsing {
+  transition: 1s;
 }
 
-/* Top right text */
-.top-right {
-  position: absolute;
-  top: 8px;
-  right: 16px;
+/* transparent ìnput form class */
+.transparent-input {
+  background: #0f052e;
+  border-color: #f6f6f6;
 }
 
-/* Bottom right text */
-.bottom-right {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-}
-
-/* Centered text */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* row height*/
+.row-height-150{
+  height: 150px;
 }
