@@ -93,6 +93,10 @@ span {
   font-size: 2vw;
 }
 
+.fontSize2-5vw {
+  font-size: 2.5vw;
+}
+
 /* background color class */
 .bgGreen {
   background-color: #43D4A1;
@@ -111,13 +115,26 @@ span {
   background-image: url('images/endblock.png');
 }
 
+.bgAboutTop {
+  background-image: url('images/');
+}
+
 /* border-type class */
 .borderRound {
   border-radius: 20px;
 }
 
+.borderLightRound {
+  border-radius: 15px;
+}
+
 .borderBlue {
   border-color: #1a3778;
+  border-width: medium;
+}
+
+.borderWhite {
+  border-color: #f6f6f6;
   border-width: medium;
 }
 
@@ -152,5 +169,10 @@ span {
 
 .btn-Green {
   background-color: #43D4A1;
+}
+
+/* font awesome icon colors*/
+.fas {
+	color: #43D4A1 !important;
 }
 
