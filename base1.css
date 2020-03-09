@@ -93,8 +93,8 @@ span {
   font-size: 2vw;
 }
 
-.fontSize2-5vw {
-  font-size: 2.5vw;
+.fontSize3vw {
+  font-size: 3vw;
 }
 
 /* background color class */
@@ -116,7 +116,11 @@ span {
 }
 
 .bgAboutTop {
-  background-image: url('images/');
+  background-image: url('images/aboutbg.png');
+}
+
+.bgTimeline {
+  background-image: url('images/timeline2.png');
 }
 
 /* border-type class */
