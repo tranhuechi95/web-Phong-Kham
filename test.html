@@ -10,69 +10,166 @@
     <link rel="stylesheet" href="base1.css">
 </head>
 <body>
-<div class="container-fluid text-center my-5 mx-3">
-	<h3 class="fontRoboBold fontSize2vw pb-3">THƯ VIỆN ẢNH</h3>		
-			<div id="carouselExampleControls" class="carousel slide p-5 bgGreen" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleControls" data-slide-to="1"></li>
-					<li data-target="#carouselExampleControls" data-slide-to="2"></li>
-				</ol>
-				
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<!-- make a photo gallery with 3 photos per slide-->
-						<div class="row">
-							<div class="col-md-4">
-								<img src="images/pk1.jpg" class="img-fluid">
-							</div>
-							<div class="col-md-4">
-								<img src="images/pk2.jpg" class="img-fluid">
-							</div>
-							<div class="col-md-4">
-								<img src="images/pk3.jpg" class="img-fluid">
-							</div>
-						</div>	
+
+	<div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Logo -->
+            <img src="images/logo.png" style="width: 10vw;">
+            <!-- Collapse icon -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navigation options -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">GIỚI THIỆU<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#DichVu">DỊCH VỤ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#BacSiTeam">ĐỘI NGŨ BÁC SĨ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TIN TỨC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#formDatLich">ĐẶT LỊCH KHÁM-LIÊN HỆ</a>
+                    </li>
+                </ul>
+                <!-- Search bar -->
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>            
+        </nav>
+    </div>
+
+    <!-- color block -->
+    
+    <div class="container-fluid bgGreen fontSansation colorDarkBlue text-center p-5">
+        <h3 class="fontSize1-5vw">PHÒNG KHÁM CHUYÊN KHOA</h3>
+        <h2 class="fontSize2vw">TAI MŨI HỌNG</h2>
+        <h3 class="fontSize1-5vw">PGS.TS.BS. PHẠM THỊ BÍCH ĐÀO</h3>
+    </div>
+
+    <!-- About us block-->
+    <div class="container-fluid m-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-fluid" src="images/hinhdv.png">
+    
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6 fontSize1vw">
+                <h3 class="fontSize2vw fontRoboBold colorDarkBlue">Giới thiệu phòng khám</h3>
+                <p class="fontSize1-2vw fontRoboLight">Phòng khám chuyên khoa Tai Mũi Họng khám, tư vấn, chẩn đoán và điều trị các bệnh lý tai mũi họng:
+                    <li class="fontSize1-2vw fontRoboLight">Viêm mũi - xoang</li>
+                    <li class="fontSize1-2vw fontRoboLight">Viêm tai giữa</li>
+                    <li class="fontSize1-2vw fontRoboLight">Viêm họng</li>
+                    <li class="fontSize1-2vw fontRoboLight">Viêm thanh quản - khàn tiếng</li>
+                    <li class="fontSize1-2vw fontRoboLight">Viên phế quản</li>
+                </p>
+                <p class="fontSize1-2vw fontRoboLight">Ngoài ra, phòng khám còn khám phát hiện sớm ung thư vòm, ung thư thanh quản, ung thư mũi xoang, ung thư hạ họng<br>Tư vấn bảo dưỡng thanh quản cho những bệnh nhân sử dụng gióng nói nhiều trong công việc (ca sĩ, giáo viên,v.v).
+                </p>    
+            </div>
+        </div>       
+    </div>
+
+    <!-- timeline block -->
+    <div class="container-fluid m-5">
+        <img class="img-fluid" src="images/timeline2.png">
+    </div>
+
+    <!-- Thời gian làm việc và đội ngũ bác sĩ -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 p-5 colorDarkBlue bgGreen">
+                <h4 class="fontRoboBold fontSize1-5vw pt-3">THỜI GIAN LÀM VIỆC</h4>
+				<div class="row py-2 px-2">
+					<div class="col-md-6 fontRoboLight fontSize1-2vw">Thứ Hai - Thứ Sáu<br>Thứ Bảy<br>Chủ Nhật</div>
+					<div class="col-md-4 fontRoboLight fontSize1-2vw">17:00-20:00<br>16:00-20:00<br>15:00-20:00
 					</div>
-					<div class="carousel-item">
-						<div class="row">
-							<div class="col-md-4">
-								<img src="images/pk4.jpg" class="img-fluid">
-							</div>
-							<div class="col-md-4">
-								<img src="images/pk5.jpg" class="img-fluid">
-							</div>
-							<div class="col-md-4">
-								<img src="images/tv1.png" class="img-fluid">
-							</div>
-						</div>	
+                </div>
+                <h3 class="fontRoboLight fontSize1-2vw p-2">Khám tại nhà theo lịch đặt trước</h3>
+    
+            </div>
+            <div class="col-md-6 p-5 colorGreen bgDarkBlue">
+                <h3 class="fontRoboBold fontSize2vw pb-3"><span class="colorWhite">Đội ngũ </span><span class="colorGreen">CHUYÊN GIA</span></h3>
+                <p class="fontRoboLight fontSize1-2vw">Đội ngũ bác sĩ tại phòng khám đến từ bệnh viện Đại học Y Hà Nội sẽ tận tình thăm khám và chẩn đoán với mong muốn nâng cao sức khoẻ và chất lượng cuộc sống tốt nhất cho bạn và gia đình.</p>
+    
+            </div>
+        </div>
+    </div>
+	<div class="container-fluid text-center my-5 mx-3">
+		<h3 class="fontRoboBold fontSize2vw pb-3">THƯ VIỆN ẢNH</h3>		
+				<div id="galleryCarousel" class="carousel slide p-5 bgGreen" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#galleryCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#galleryCarousel" data-slide-to="1"></li>
+						<li data-target="#galleryCarousel" data-slide-to="2"></li>
+					</ol>
 					
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<!-- make a photo gallery with 3 photos per slide-->
+							<div class="row">
+								<div class="col-md-4">
+									<img src="images/pk1.jpg" class="img-fluid">
+								</div>
+								<div class="col-md-4">
+									<img src="images/pk2.jpg" class="img-fluid">
+								</div>
+								<div class="col-md-4">
+									<img src="images/pk3.jpg" class="img-fluid">
+								</div>
+							</div>	
+						</div>
+						<div class="carousel-item">
+							<div class="row">
+								<div class="col-md-4">
+									<img src="images/pk4.jpg" class="img-fluid">
+								</div>
+								<div class="col-md-4">
+									<img src="images/pk5.jpg" class="img-fluid">
+								</div>
+								<div class="col-md-4">
+									<img src="images/tv1.png" class="img-fluid">
+								</div>
+							</div>	
+						
+						</div>
+						<div class="carousel-item">
+							<div class="row">
+								<div class="col-md-4">
+									<img src="images/tv2.png" class="img-fluid">
+								</div>
+								<div class="col-md-4">
+									<img src="images/tv3.png" class="img-fluid">
+								</div>
+								<div class="col-md-4">
+									<img src="images/pk1.jpg" class="img-fluid">
+								</div>
+							</div>	
+						</div>
 					</div>
-					<div class="carousel-item">
-						<div class="row">
-							<div class="col-md-4">
-								<img src="images/tv2.png" class="img-fluid">
-							</div>
-							<div class="col-md-4">
-								<img src="images/tv3.png" class="img-fluid">
-							</div>
-							<div class="col-md-4">
-								<img src="images/pk1.jpg" class="img-fluid">
-							</div>
-						</div>	
-					</div>
+					
+					<a class="carousel-control-prev" href="#galleryCarousel" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#galleryCarousel" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
 				</div>
-				
-				<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-	
+		
 
 </div>
 
@@ -132,24 +229,5 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-    <!-- Bootstrap Date-picker plugin -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-    <!-- Script for datepicker -->
-    <script>
-        $(document).ready(function(){
-          var date_input=$('input[name="date"]'); //our date input has the name "date"
-          var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-          var options={
-            format: 'mm/dd/yyyy',
-            container: container,
-            todayHighlight: true,
-            autoclose: true,
-          };
-          date_input.datepicker(options);
-        })
-    </script>
 </body>
 </html>

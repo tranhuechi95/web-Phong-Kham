@@ -85,20 +85,12 @@ span {
   font-size: 1.2vw;
 }
 
-.fontSize1-3vw {
-  font-size: 1.3vw;
-}
-
 .fontSize1-5vw {
   font-size: 1.5vw;
 }
 
 .fontSize2vw {
   font-size: 2vw;
-}
-
-.fontSize3vw {
-  font-size: 3vw;
 }
 
 /* background color class */
@@ -114,17 +106,14 @@ span {
   background-color: #0C3B5A;
 }
 
-/* background imgge*/
+/* font awesome icon colors*/
+.fas {
+	color: #43D4A1 !important;
+}
+
+/* background image*/
 .bgPhotoEnd {
-  background-image: url('images/endblock.png');
-}
-
-.bgAboutTop {
-  background-image: url('images/aboutbg.png');
-}
-
-.bgTimeline {
-  background-image: url('images/timeline2.png');
+  background-image: url('images/endblock3.jpg');
 }
 
 /* border-type class */
@@ -132,17 +121,8 @@ span {
   border-radius: 20px;
 }
 
-.borderLightRound {
-  border-radius: 15px;
-}
-
 .borderBlue {
   border-color: #1a3778;
-  border-width: medium;
-}
-
-.borderWhite {
-  border-color: #f6f6f6;
   border-width: medium;
 }
 
@@ -179,11 +159,6 @@ span {
   background-color: #43D4A1;
 }
 
-/* font awesome icon colors*/
-.fas {
-	color: #43D4A1 !important;
-}
-
 /* container for timeline */
 .timelineContainer {
 	position: relative;
@@ -194,20 +169,18 @@ span {
 .topRowMid {
 	position: absolute;
 	top: 10%;
-  left: 36.8%;
-  right: 33%;
+	left: 36.5%;
 }
 
 .bottomRowLeft {
 	position: absolute;
 	top: 60%;
-  left: 8%;
-  right: 66%
+	left: 8%	
 }
 
 .bottomRowRight {
 	position: absolute;
 	top: 60%;
-  left: 66.5%;
-  right: 5%;
+	left: 65%
 }
+
