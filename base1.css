@@ -71,6 +71,10 @@ span {
   color: #f6f6f6;
 }
 
+.colorOffWhite {
+  color: #e2dccd;
+}
+
 .colorDarkBlue {
   color: #0f052e
 }
@@ -187,7 +191,7 @@ span {
 /* container for timeline */
 .timelineContainer {
 	position: relative;
-	text-align: left;
+	text-align: center;
 }
 
 /* text over timeline classes */
@@ -211,3 +215,16 @@ span {
   left: 66.5%;
   right: 5%;
 }
+
+/* text below photo*/
+.textBelow {
+  position: absolute;
+  top: 80%;
+  left: 10%;
+  right: 10%;
+}
+
+/* flex class */
+item {
+  flex: 1 1 0px; 
+} 
