@@ -140,6 +140,10 @@ span {
   border-radius: 15px;
 }
 
+.borderRect {
+  border: solid;
+}
+
 .borderBlue {
   border-color: #1a3778;
   border-width: medium;
@@ -228,3 +232,48 @@ span {
 item {
   flex: 1 1 0px; 
 } 
+
+/* horizontal and vertical lines for baivietTemplate.html*/
+.vl {
+  border-left: 1px solid #ececec;
+  position: absolute;
+  height: 3100px;
+  left: 62%;
+  top: 10%;
+}
+
+.vl-short {
+  border-left: 1px solid #ececec;
+  position: absolute;
+  height: 3000px;
+  left: 62%;
+  top: 10%;
+}
+
+
+/* pagination class */
+.paginationCustom {
+  display: inline-block;
+  align-self: right;
+}
+
+.paginationCustom a {
+  color: #0f052e;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.paginationCustome a.active {
+  background-color:#0f052e;
+  color: #e2dccd;
+}
+
+.paginationCustom a:hover:not(.active) {background-color: #ddd;}
+
+/* for scrolling */
+.colScroll {
+  height: 700px;
+  overflow-y: scroll;
+}
+
