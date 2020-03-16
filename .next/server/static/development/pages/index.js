@@ -107,9 +107,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Nav */ "./components/Nav.js");
 /* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/style.css */ "./styles/style.css");
 /* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_style_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/becondethuong321/Documents/web-Phong-Kham/components/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -117,13 +120,39 @@ const Layout = props => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 7
     },
     __self: undefined
-  }, __jsx(_Nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx("link", {
+    rel: "stylesheet",
+    href: "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+    integrity: "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm",
+    crossorigin: "anonymous",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }), __jsx("link", {
+    rel: "stylesheet",
+    href: "https://use.fontawesome.com/releases/v5.7.0/css/all.css",
+    integrity: "sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ",
+    crossorigin: "anonymous",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  })), __jsx(_Nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
     },
     __self: undefined
   }), props.children);
@@ -152,38 +181,172 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const Nav = () => __jsx("div", {
+  className: "container-fluid mx-5",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 4
+  },
+  __self: undefined
+}, __jsx("nav", {
+  className: "navbar navbar-expand-lg navbar-light bg-light",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 5
+  },
+  __self: undefined
+}, __jsx("img", {
+  src: "../static/assets/template/images/logo.png",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 6
+  },
+  __self: undefined
+}), __jsx("button", {
+  className: "navbar-toggler",
+  type: "button",
+  "data-toggle": "collapse",
+  "data-target": "#navbarSupportedContent",
+  "aria-controls": "navbarSupportedContent",
+  "aria-expanded": "false",
+  "aria-label": "Toggle navigation",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 8
+  },
+  __self: undefined
+}, __jsx("span", {
+  class: "navbar-toggler-icon",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 10
+  },
+  __self: undefined
+})), __jsx("div", {
+  className: "collapse navbar-collapse",
+  id: "navbarSupportedContent",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 13
+  },
+  __self: undefined
+}, __jsx("ul", {
+  className: "navbar-nav mr-auto",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 14
+  },
+  __self: undefined
+}, __jsx("li", {
+  className: "nav-item active",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 15
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
   href: "/",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 5
+    lineNumber: 16
   },
   __self: undefined
 }, __jsx("a", {
+  className: "nav-link",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 6
+    lineNumber: 17
   },
   __self: undefined
-}, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+}, "TRANG CH\u1EE6", __jsx("span", {
+  class: "sr-only",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 17
+  },
+  __self: undefined
+}, "(current)")))), __jsx("li", {
+  className: "nav-item",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 21
+  },
+  __self: undefined
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
   href: "/about",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 8
+    lineNumber: 22
   },
   __self: undefined
 }, __jsx("a", {
+  className: "nav-link",
+  href: "#",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 9
+    lineNumber: 23
   },
   __self: undefined
-}, "About")));
+}, "GI\u1EDAI THI\u1EC6U"))), __jsx("li", {
+  className: "nav-item",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 27
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "nav-link",
+  href: "#DichVu",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 28
+  },
+  __self: undefined
+}, "D\u1ECACH V\u1EE4")), __jsx("li", {
+  className: "nav-item",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 30
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "nav-link",
+  href: "#BacSiTeam",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 31
+  },
+  __self: undefined
+}, "\u0110\u1ED8I NG\u0168 B\xC1C S\u0128")), __jsx("li", {
+  className: "nav-item",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 33
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "nav-link",
+  href: "#tintuc",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 34
+  },
+  __self: undefined
+}, "TIN T\u1EE8C")), __jsx("li", {
+  className: "nav-item",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 36
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "nav-link",
+  href: "#formDatLich",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 37
+  },
+  __self: undefined
+}, "\u0110\u1EB6T L\u1ECACH KH\xC1M-LI\xCAN H\u1EC6"))))));
 
 /* harmony default export */ __webpack_exports__["default"] = (Nav);
 
@@ -1908,7 +2071,54 @@ const Index = () => {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
+module.exports = {
+	"fontRoboLight": "_1UVhWHIkkYUq3acpxFMvDF",
+	"fontSansation": "HwsAFyp07noGLBXdxfLCs",
+	"fontRoboBold": "_1HecIBxy8idFKWWfXT2yf4",
+	"fontRoboLightItalic": "LhhUMP28Zn0Q_cdkD4bUZ",
+	"fontRoboReg": "_1DMU3FMNMROfQylMZ4_oy6",
+	"colorGreen": "_3mGxvWyhEhxpX_1MUqNA9Y",
+	"colorBlue": "_2Sry6DJORvMdS36I4GOSKR",
+	"colorGrey": "_1S6kHerLNR8EULr4FNuCbS",
+	"colorWhite": "FRt4-e8IkfuOAJc3SOB5I",
+	"colorOffWhite": "_1KWz6__vhB1Er-uXDcJj7d",
+	"colorDarkBlue": "nXmZ9pr9vofZ8gM83uxB2",
+	"fontSize1vw": "_1Firha5qFIERbp8XLw6rVW",
+	"fontSize1-2vw": "_2d1j_yO-Kxsf9C8Fy2h8gf",
+	"fontSize1-3vw": "_10cPbyl8m6fFx7JS6mt8cl",
+	"fontSize1-5vw": "_2WGxPPxuZ2mJJbc046JU6X",
+	"fontSize2vw": "_1sA2-zibu0MdMf8THXYDIr",
+	"fontSize3vw": "FzFvW6-5R4CLM4Zy0cb9D",
+	"bgGreen": "_1oXa1aucTgf2KUr1FtT77U",
+	"bgBlue": "_3uiWW3xodZb1yhXaQkYBFP",
+	"bgDarkBlue": "_3Vvdf_3pnLyinD_pKv5OPM",
+	"bgPhotoEnd": "_2uQBxH5vZr55Ht3HpmmJYv",
+	"bgAboutTop": "_1TV_PSvxPnpiYG5LsZ-vLN",
+	"bgTimeline": "_1Lbah29vOhFhGtEoWweMW3",
+	"borderRound": "ycdg4RYwcxJtzBz9aqv_p",
+	"borderLightRound": "_2LPE3WY8EIfzD4e2iSbbA1",
+	"borderRect": "_1IMnmCRUh0Hv5r6ACy2Btc",
+	"borderBlue": "_2OaQAyuVrUjXLfxrEekwxN",
+	"borderWhite": "_1wOr5F_GBa67XEVg9Lon0y",
+	"card-body-DichVu": "_1cLWYrp5gw3JoiSuHVzlIp",
+	"collapsing": "qXX-xKGThZivvwFsV2PhZ",
+	"transparent-input": "aOEPxt6SifjC3_qo1Fbui",
+	"row-height-150": "_3aMN-9pVRzyDkRg1Mj8eEw",
+	"btn-DarkBlue": "_3So62VZnKWePUhoKUp6WcG",
+	"btn-Green": "_3NAUNJdESluj9JS9EyZO7h",
+	"fas": "xyqBchWCO1nfn4ZjKGQwE",
+	"timelineContainer": "_156xXSdJkfVt24PJw9vO2-",
+	"topRowMid": "MzzA329MYKWxI5zT-v_-r",
+	"bottomRowLeft": "_1RBPOF-N6MhO4dwvasZkmv",
+	"bottomRowRight": "_3vquiq2t5FZU0fA_AkhawY",
+	"textBelow": "VRjVFWoeWNSEVY_xvHxmW",
+	"vl": "_2FzjB1jgyqzv_tHpAgeW5o",
+	"vl-short": "_6Anl2dYh_9-YOc5yAxFmX",
+	"paginationCustom": "_1EvCp1Fe1bB-JcTjioLYiP",
+	"paginationCustome": "_2eHoBHbB7QuwNBjZVUhHHE",
+	"active": "_1GlsT95MlMAshZNXvzApyA",
+	"colScroll": "rMkwAw5-JPhn4w95k5W4z"
+};
 
 /***/ }),
 
@@ -1921,6 +2131,17 @@ const Index = () => {
 
 module.exports = __webpack_require__(/*! /Users/becondethuong321/Documents/web-Phong-Kham/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 

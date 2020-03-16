@@ -1,3 +1,8 @@
-import withCSS from '@zeit/next-css';
+const withCSS = require('@zeit/next-css')
+const withSass = require('@zeit/next-sass')
+const withFonts = require('next-fonts')
+const withImages = require('next-images')
 
-export default withCSS();
+module.exports = withImages(withFonts(withCSS(withSass({
+    cssModules: true
+}))));
