@@ -16,7 +16,7 @@ span {
 
 @font-face {
   font-family: RoboLight;
-  src: url('fonts/Roboto-Light.ttf');
+  src: url('../fonts//Roboto-Light.ttf');
 }
 
 .fontSansation {
@@ -24,7 +24,7 @@ span {
 }
 @font-face {
   font-family: Sansation;
-  src: url('fonts/SVN-Sansation.ttf');
+  src: url('../fonts/SVN-Sansation.ttf');
 }
 
 .fontRoboBold {
@@ -33,7 +33,7 @@ span {
 
 @font-face {
   font-family: RoboBold;
-  src: url('fonts/Roboto-Bold.ttf');
+  src: url('../fonts/Roboto-Bold.ttf');
 }
 
 .fontRoboLightItalic {
@@ -42,7 +42,7 @@ span {
 
 @font-face {
   font-family: RoboLightItalic;
-  src: url('fonts/Roboto-LightItalic.ttf');
+  src: url('../fonts/Roboto-LightItalic.ttf');
 }
 
 .fontRoboReg {
@@ -51,7 +51,7 @@ span {
 
 @font-face {
   font-family: RoboReg;
-  src: url('fonts/Roboto-Regular.ttf');
+  src: url('../fonts/Roboto-Regular.ttf');
 }
 
 /* color class */
@@ -120,15 +120,15 @@ span {
 
 /* background imgge*/
 .bgPhotoEnd {
-  background-image: url('images/endblock.png');
+  background-image: url('../images/endblock.png');
 }
 
 .bgAboutTop {
-  background-image: url('images/aboutbg.png');
+  background-image: url('../images/aboutbg.png');
 }
 
 .bgTimeline {
-  background-image: url('images/timeline2.png');
+  background-image: url('../images/timeline2.png');
 }
 
 /* border-type class */
