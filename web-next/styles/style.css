@@ -1,0 +1,278 @@
+body {
+  font-family: sans-serif;
+}
+
+/* for the nav-bar */
+
+/* Show whitespaces in span */
+span {
+  white-space:pre;
+}
+
+/* font class */
+.fontRoboLight {
+  font-family: RoboLight;
+}
+
+@font-face {
+  font-family: RoboLight;
+  src: url('../static/assets/template/fonts/Roboto-Light.ttf');
+}
+
+.fontSansation {
+  font-family: Sansation;
+}
+@font-face {
+  font-family: Sansation;
+  src: url('../static/assets/template/fonts/SVN-Sansation.ttf');
+}
+
+.fontRoboBold {
+  font-family: RoboBold;
+}
+
+@font-face {
+  font-family: RoboBold;
+  src: url('../static/assets/template/fonts/Roboto-Bold.ttf');
+}
+
+.fontRoboLightItalic {
+  font-family: RoboLightItalic;
+}
+
+@font-face {
+  font-family: RoboLightItalic;
+  src: url('../static/assets/template/fonts/Roboto-LightItalic.ttf');
+}
+
+.fontRoboReg {
+  font-family: RoboReg;
+}
+
+@font-face {
+  font-family: RoboReg;
+  src: url('../static/assets/template/fonts/Roboto-Regular.ttf');
+}
+
+/* color class */
+.colorGreen {
+  color: #43D4A1;
+}
+
+.colorBlue {
+  color: #1a3778;
+}
+
+.colorGrey {
+  color: #808080;
+}
+
+.colorWhite {
+  color: #f6f6f6;
+}
+
+.colorOffWhite {
+  color: #e2dccd;
+}
+
+.colorDarkBlue {
+  color: #0f052e
+}
+
+/* font size */
+
+.fontSize1vw {
+  font-size: 1vw;
+}
+
+.fontSize1-2vw {
+  font-size: 1.2vw;
+}
+
+.fontSize1-3vw {
+  font-size: 1.3vw;
+}
+
+.fontSize1-5vw {
+  font-size: 1.5vw;
+}
+
+.fontSize2vw {
+  font-size: 2vw;
+}
+
+.fontSize3vw {
+  font-size: 3vw;
+}
+
+/* background color class */
+.bgGreen {
+  background-color: #43D4A1;
+}
+
+.bgBlue {
+  background-color: #1a3778;
+}
+
+.bgDarkBlue {
+  background-color: #0C3B5A;
+}
+
+/* background imgge*/
+.bgPhotoEnd {
+  background-image: url('../static/assets/template/images/endblock.png');
+}
+
+.bgAboutTop {
+  background-image: url('../static/assets/template/images/aboutbg.png');
+}
+
+.bgTimeline {
+  background-image: url('../static/assets/template/images/timeline2.png');
+}
+
+/* border-type class */
+.borderRound {
+  border-radius: 20px;
+}
+
+.borderLightRound {
+  border-radius: 15px;
+}
+
+.borderRect {
+  border: solid;
+}
+
+.borderBlue {
+  border-color: #1a3778;
+  border-width: medium;
+}
+
+.borderWhite {
+  border-color: #f6f6f6;
+  border-width: medium;
+}
+
+
+/* align content of card-body to center */
+.card-body-DichVu {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* collapsing transition class */
+.collapsing {
+  transition: 1s;
+}
+
+/* transparent ìnput form class */
+.transparent-input {
+  background: #0f052e;
+  border-color: #f6f6f6;
+}
+
+/* row height*/
+.row-height-150{
+  height: 150px;
+}
+
+/* button color*/
+.btn-DarkBlue {
+  background-color: #0f052e;
+}
+
+.btn-Green {
+  background-color: #43D4A1;
+}
+
+/* font awesome icon colors*/
+.fas {
+    color: #43D4A1 !important;
+}
+
+/* container for timeline */
+.timelineContainer {
+    position: relative;
+    text-align: center;
+}
+
+/* text over timeline classes */
+.topRowMid {
+    position: absolute;
+    top: 10%;
+  left: 36.8%;
+  right: 33%;
+}
+
+.bottomRowLeft {
+    position: absolute;
+    top: 60%;
+  left: 8%;
+  right: 66%
+}
+
+.bottomRowRight {
+    position: absolute;
+    top: 60%;
+  left: 66.5%;
+  right: 5%;
+}
+
+/* text below photo*/
+.textBelow {
+  position: absolute;
+  top: 80%;
+  left: 10%;
+  right: 10%;
+}
+
+/* flex class */
+item {
+  flex: 1 1 0px; 
+} 
+
+/* horizontal and vertical lines for baivietTemplate.html*/
+.vl {
+  border-left: 1px solid #ececec;
+  position: absolute;
+  height: 3100px;
+  left: 62%;
+  top: 10%;
+}
+
+.vl-short {
+  border-left: 1px solid #ececec;
+  position: absolute;
+  height: 3000px;
+  left: 62%;
+  top: 10%;
+}
+
+
+/* pagination class */
+.paginationCustom {
+  display: inline-block;
+  align-self: right;
+}
+
+.paginationCustom a {
+  color: #0f052e;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.paginationCustome a.active {
+  background-color:#0f052e;
+  color: #e2dccd;
+}
+
+.paginationCustom a:hover:not(.active) {background-color: #ddd;}
+
+/* for scrolling */
+.colScroll {
+  height: 700px;
+  overflow-y: scroll;
+}
