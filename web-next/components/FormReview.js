@@ -8,8 +8,8 @@ const FormReview = () => {
                         <h4 className="fontRoboBold fontSize1-5vw">DỊCH VỤ KHÁM</h4>
                         <div className="form-row">
                             <div className="form-group col-md-5">
-                                <label for="chonDichVu" className="fontRoboLightItalic fontSize1-2vw">Chọn dịch vụ *</label>
-                                <select className="form-control" id="chonDichVu" nameName="chonDichVu" required="required">
+                                <label className="fontRoboLightItalic fontSize1-2vw">Chọn dịch vụ *</label>
+                                <select className="form-control" id="chonDichVu" name="chonDichVu" required="required">
                                     <option className="colorWhite">1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -21,42 +21,42 @@ const FormReview = () => {
                         <h4 className="fontRoboBold fontSize1-5vw">THÔNG TIN ĐĂNG KÝ</h4>
                         <div className="form-row">
                             <div className="form-group col-md-5">
-                                <label for="name" class="fontRoboLightItalic fontSize1-2vw">Họ tên*</label>
-                                <input type="text" class="form-control" id="name" placeholder="Điền họ và tên" name="name" required="required"/>
+                                <label className="fontRoboLightItalic fontSize1-2vw">Họ tên*</label>
+                                <input type="text" className="form-control" id="name" placeholder="Điền họ và tên" name="name" required="required"/>
                             </div>
                             <div className="col-md-1"></div>
                             <div className="form-group col-md-6">
-                                <label for="email" class="fontRoboLightItalic fontSize1-2vw">Email*</label>
+                                <label className="fontRoboLightItalic fontSize1-2vw">Email*</label>
                                 <input type="email" className="form-control" id="email" placeholder="Điền email" name="email" required="required"/>
                             </div>
                         </div>
                         
                         <div className="form-row">
                             <div className="form-group col-md-4">
-                                <label for="tel" className="fontRoboLightItalic fontSize1-2vw">Số điện thoại*</label>
+                                <label className="fontRoboLightItalic fontSize1-2vw">Số điện thoại*</label>
                                 <input type="tel" className="form-control" id="tel" placeholder="Điền SĐT" name="tel" required="required"/>
                             </div>
                             <div className="col-md-2"></div>
                             <div className="form-group col-md-4">
-                                <label for="ngaySinh" class="fontRoboLightItalic fontSize1-2vw">Ngày sinh</label>
-                                <input type="date" class="form-control" id="ngaySinh" placeholder="DD/MM/YYYY" name="ngaySinh"/>
+                                <label className="fontRoboLightItalic fontSize1-2vw">Ngày sinh</label>
+                                <input type="date" className="form-control" id="ngaySinh" placeholder="DD/MM/YYYY" name="ngaySinh"/>
                             </div>
                         </div>
                         
                         <div className="form-group">
-                            <label for="address" className="fontRoboLightItalic fontSize1-2vw">Địa chỉ</label>
+                            <label className="fontRoboLightItalic fontSize1-2vw">Địa chỉ</label>
                             <input type="text" className="form-control" id="address" placeholder="Điền địa chỉ" name="address"/>
                         </div>
                         
                         <h4 className="fontRoboBold fontSize1-5vw">CHỌN LỊCH KHÁM</h4>
                         <div className="form-row">
                             <div className="form-group col-md-4">
-                                <label for="ngayKham" className="fontRoboLightItalic fontSize1-2vw">Ngày khám*</label>
+                                <label className="fontRoboLightItalic fontSize1-2vw">Ngày khám*</label>
                                 <input type="date" className="form-control" id="date" placeholder="DD/MM/YYYY" name="date" required="required"/>
                             </div>
                             <div className="col-md-3"></div>
                             <div className="form-group col-md-5">
-                                <label for="gioKham" class="fontRoboLightItalic fontSize1-2vw">Giờ khám*</label>                           
+                                <label className="fontRoboLightItalic fontSize1-2vw">Giờ khám*</label>                           
                                 <select className="form-control" id="gioKham" name="chonDichVu" required="required">
                                     <option>T2-T6 17:00-18:30</option>
                                     <option>T2-T6 18:30-20:00</option>
@@ -85,7 +85,7 @@ const FormReview = () => {
                             </div>
                             <div id="carouselExampleControls" className="carousel slide p-5" data-ride="carousel">
                                 { /* <!--<ol class="carousel-indicators">
-                                    <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleControls" data-slide-to="0" className="active"></li>
                                     <li data-target="#carouselExampleControls" data-slide-to="1"></li>
                                     <li data-target="#carouselExampleControls" data-slide-to="2"></li>
                                 </ol>--> */}
@@ -148,7 +148,7 @@ const FormReview = () => {
                             </div>
                         </div>   
                     </div>
-                    <div class="col-md-1 bgDarkBlue">             
+                    <div className="col-md-1 bgDarkBlue">             
                     </div>   
             </div>
         </div>
