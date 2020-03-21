@@ -2,7 +2,7 @@ const Test = (props) => {
     return (
         <div>
             <div id="tintuc" className="container-fluid text-center">
-            <h3 class="fontSansation colorDarkBlue fontSize3vw pt-5">TIN TỨC - BÀI VIẾT</h3>
+            <h3 className="fontSansation colorDarkBlue fontSize3vw pt-5">TIN TỨC - BÀI VIẾT</h3>
             <div id="tintucCarousel" className="carousel slide p-5" data-ride="carousel">
                 {/*  each picture will be a link */}
                 <div className="carousel-inner">

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2684,7 +2684,7 @@ const Test = props => {
     },
     __self: undefined
   }, __jsx("h3", {
-    class: "fontSansation colorDarkBlue fontSize3vw pt-5",
+    className: "fontSansation colorDarkBlue fontSize3vw pt-5",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 5
@@ -4735,7 +4735,7 @@ module.exports = JSON.parse("[{\"id\":1,\"name\":\"VẮC XIN PHÒNG BỆNH\",\"p
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

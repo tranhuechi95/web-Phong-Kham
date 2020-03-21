@@ -2597,7 +2597,7 @@ var Test = function Test(props) {
     },
     __self: this
   }, __jsx("h3", {
-    "class": "fontSansation colorDarkBlue fontSize3vw pt-5",
+    className: "fontSansation colorDarkBlue fontSize3vw pt-5",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 5
@@ -8625,7 +8625,7 @@ module.exports = JSON.parse("[{\"id\":1,\"name\":\"VẮC XIN PHÒNG BỆNH\",\"p
 
 /***/ }),
 
-/***/ 1:
+/***/ 4:
 /*!*******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fbecondethuong321%2FDocuments%2Fweb-Phong-Kham%2Fweb-next%2Fpages%2Findex.js ***!
   \*******************************************************************************************************************************************************/
@@ -8648,5 +8648,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[4,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

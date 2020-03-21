@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout"
-import { useRouter } from 'next/router'
+//import { useRouter } from 'next/router'
 import posts from '../../static/topic.json'
 import postContent from '../../static/postContent.json'
 import Link from 'next/link'
@@ -61,9 +61,9 @@ const MainTopicArticle = (props) => {
     )
 }
 
-const Post = () => {
-    const router = useRouter();
-    const currPostName = router.query.postName;
+const mainPost = props => {
+    //const router = useRouter();
+    const currPostName = props.currPostName;
     const currName = posts.filter(post => post.postName == currPostName);
 
     // how do I get the name of this post name?
@@ -92,4 +92,11 @@ const Post = () => {
         </Layout>
     );
 }
-export default Post;
+
+mainPost.getInitialProps = ({query}) => {
+    return {
+        currPostName: query.postName
+    };
+}
+
+export default mainPost;

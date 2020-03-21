@@ -22,7 +22,7 @@ const Timeline = () => {
             
                     </div>
                     <div className="col-md-6 p-5 colorGreen bgDarkBlue">
-                        <h3 className="fontRoboBold fontSize2vw pb-3"><span class="colorWhite">Đội ngũ </span><span className="colorGreen">CHUYÊN GIA</span></h3>
+                        <h3 className="fontRoboBold fontSize2vw pb-3"><span className="colorWhite">Đội ngũ </span><span className="colorGreen">CHUYÊN GIA</span></h3>
                         <p className="fontRoboLight fontSize1-2vw">Đội ngũ bác sĩ tại phòng khám đến từ bệnh viện Đại học Y Hà Nội sẽ tận tình thăm khám và chẩn đoán với mong muốn nâng cao sức khoẻ và chất lượng cuộc sống tốt nhất cho bạn và gia đình.</p>
                     </div>
                 </div>
