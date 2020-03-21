@@ -3,7 +3,7 @@ const DoctorTeam = () => {
     <div>
         <div id="BacSiTeam" className="container-fluid text-center">
             <p className="fontSansation pt-5 fontSize3vw">
-                <span className="colorBlue">ĐỘI NGŨ</span>
+                <span className="colorBlue">ĐỘI NGŨ </span>
                 <span className="colorGreen">BÁC SĨ</span>
             </p> 
             

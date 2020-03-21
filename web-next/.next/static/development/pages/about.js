@@ -6107,7 +6107,7 @@ var About = function About() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 6:
 /*!************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fabout&absolutePagePath=%2FUsers%2Fbecondethuong321%2FDocuments%2Fweb-Phong-Kham%2Fweb-next%2Fpages%2Fabout.js ***!
   \************************************************************************************************************************************************************/
@@ -6130,5 +6130,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[6,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=about.js.map
