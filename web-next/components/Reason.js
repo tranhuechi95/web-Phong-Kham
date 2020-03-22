@@ -1,7 +1,7 @@
 const Reason = () => {
     return (
         <div>
-            <div className="container-fluid mt-5 text-center">    
+            <div className="container-fluid mt-5 text-center pt-5">    
                 <p className="fontSansation">
                     <span className="colorGreen">VÌ SAO NÊN CHỌN </span>
                     <span className="colorBlue">CHÚNG TÔI</span>
@@ -12,7 +12,7 @@ const Reason = () => {
             </div>
 
             <div className="container-fluid m-5">
-                <div className="row mx-3 my-3 text-center fontSize1vw">
+                <div className="row mx-3 my-3 text-center fontSize1vw pb-5">
                     <div className="col-md-3 p-2">
                         <img src="../static/assets/template/images/h1.png" alt="Card image cap"/>
                     </div>

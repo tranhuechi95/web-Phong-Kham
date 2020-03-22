@@ -1,7 +1,7 @@
 const Service = () => {
     return (
         <div>
-            <div id="DichVu" className="container-fluid bgGreen text-center">
+            <div id="DichVu" className="container-fluid bgGreen text-center p-5">
                 <p className="fontSansation pt-5">
                     <span className="colorBlue">DỊCH VỤ TẠI </span>
                     <span className="colorWhite">PHÒNG KHÁM</span>

@@ -7,7 +7,8 @@ const OtherTopics = (props) => {
     // filter from posts to get all the postName that is not the same as our current article's postName
     const otherTopics = posts.filter(post => post.postName != props.currArticle.postName);
     return (
-        <div>
+        <div className="col-md-4 vl-short colScroll">
+            <h3 className="fontSize1-5vw fontSansation pt-3 text-center">CÁC CHỦ ĐỀ BÀI VIẾT KHÁC</h3>
             {
                 otherTopics.map(topic => (
                     <div className="timelineContainer pt-5" key={topic.id}>
@@ -26,13 +27,13 @@ const OtherTopics = (props) => {
 const CurrArticleContent = (props) => {
     const relatedArticles = props.relatedArticles.slice(0,4);
     return (
-        <div>
+        <div className="col-md-6 py-2">
             <div>
                 {/* <!-- illustration image --> */}
                 <h3 className="colorDarkBlue fontRoboBold fontSize1-5vw pt-3">{props.currArticle.name}</h3>
                 <img className="img-fluid borderRect" src={`../../static/assets/template/images/${props.currArticle.image}`}/>
                 {/* <!-- short excerpt of the article--> */}
-                <p className="fontRoboLight fontSize1-2vw text-justify">{props.currArticle.content}</p>
+                <p className="fontRoboLight fontSize1-2vw text-justify pt-4">{props.currArticle.content}</p>
                 <p className="fontRoboBold fontSize1vw text-right">PGS.TS.BS. Phạm Thị Bích Đào</p>    
             </div>
 
@@ -44,8 +45,7 @@ const CurrArticleContent = (props) => {
                     relatedArticles.map(article => (
                         <Link href="/postContent/[article]" as={`/postContent/${article.articleName}`} key={article.id}>
                             <a><h4 className="colorDarkBlue fontSize1-2vw align-left">{article.name}</h4></a>
-                        </Link>
-                            
+                        </Link>   
                         )
                     )
                 }
@@ -73,24 +73,17 @@ const PostContent = (props) => {
     return (
         <Layout>
             <Link href="/posts/[postName]" as={`/posts/${currTopic[0].postName}`}>
-                <a><h3 className="colorDarkBlue fontSansation fontSize1-5vw pl-5 ml-5">Trang chính {currTopic[0].name}</h3></a>
+                <a><h3 className="colorDarkBlue fontSansation fontSize1-5vw pl-5 ml-5 pt-3">Trang chính {currTopic[0].name}</h3></a>
             </Link>
-            <div className="container-fluid m-4">
+            <div className="container-fluid m-3">
                 <div className="row">            
                     <div className="col-md-1">
                     </div>
-                    <div className="col-md-6 py-2">
-                        
-                        {/* <!-- latest article will be put in front with big image --> */}
-                        <CurrArticleContent currArticle={currArticle[0]} relatedArticles={relatedArticles}/>
-                    </div>
+                    {/* CurrArticleContent has className="col-md-6" */}
+                    <CurrArticleContent currArticle={currArticle[0]} relatedArticles={relatedArticles}/>
                     {/* <!-- for other topics --> */}
-                    <div className="col-md-4 vl-short colScroll">
-                        <div className="timelineContainer">
-                            <h3 className="fontSize1-5vw fontSansation pt-3">CÁC CHỦ ĐỀ BÀI VIẾT</h3>
-                        </div>
-                        <OtherTopics currArticle={currArticle[0]}/>
-                    </div>
+                    {/* OtherTopics has className="col-md-4" */}
+                    <OtherTopics currArticle={currArticle[0]}/>
                 </div>
             </div>
         </Layout>

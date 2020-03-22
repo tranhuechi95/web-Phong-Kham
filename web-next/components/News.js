@@ -14,7 +14,7 @@ const NewsCardDeck = (props) => (
 );
 
 const News = () => (
-    <div id="tintuc" className="container-fluid text-center">
+    <div id="tintuc" className="container-fluid text-center p-5">
         <h3 className="fontSansation colorDarkBlue fontSize3vw pt-5">TIN TỨC - BÀI VIẾT</h3>
         <div id="tintucCarousel" className="carousel slide p-5" data-ride="carousel">
             

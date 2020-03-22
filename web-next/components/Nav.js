@@ -1,9 +1,11 @@
-import Link from 'next/link';
+import posts from '../static/topic.json'
+import Link from './ActiveLink'
 
 const Nav = () => {
+    const firstTopic = posts[0];
     return (
-        <div className="container-fluid mx-5">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <div className="container-fluid mx-5">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             
             <img src="../static/assets/template/images/logo.png" style={{width: "10vw"}}/>
             
@@ -14,38 +16,39 @@ const Nav = () => {
             
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
-                        <Link href="/">
-                            <a className="nav-link">TRANG CHỦ<span className="sr-only">(current)</span></a>
+                    <li className="nav-item">
+                        <Link href="/" activeClassName="active">
+                            {/* <span className="sr-only">(current)</span> */}
+                            <a className="nav-link">TRANG CHỦ</a>
                         </Link>
                        
                     </li>
                     <li className="nav-item">
-                        <Link href="/about">
+                        <Link href="/about" activeClassName="active">
                             <a className="nav-link">GIỚI THIỆU</a>
                         </Link>
                         
                     </li>
                     <li className="nav-item">
-                        <Link href={`#DichVu`}>
+                        <Link href={`/#DichVu`} activeClassName="active">
                             <a className="nav-link">DỊCH VỤ</a>
                         </Link>
                         
                     </li>
                     <li className="nav-item">
-                        <Link href={`#BacSiTeam`}>
+                        <Link href={`/#BacSiTeam`} activeClassName="active">
                             <a className="nav-link">ĐỘI NGŨ BÁC SĨ</a>
                         </Link>
                         
                     </li>
                     <li className="nav-item">
-                        <Link href={`#tintuc`}>
+                        <Link href="/posts/[postName]" as={`/posts/${firstTopic.postName}`} activeClassName='active'>
                             <a className="nav-link">TIN TỨC</a>
                         </Link>
                         
                     </li>
                     <li className="nav-item">
-                        <Link href={`#formDatLich`}>
+                        <Link href={`/#formDatLich`} activeClassName='active'>
                             <a className="nav-link">ĐẶT LỊCH KHÁM-LIÊN HỆ</a>
                         </Link>
                         

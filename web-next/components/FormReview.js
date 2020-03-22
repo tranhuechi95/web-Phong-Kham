@@ -4,8 +4,8 @@ const FormReview = () => {
             <div className="row">
             {/* <!-- Form -->*/}
                 <div id="formDatLich" className="col-md-6 bgDarkBlue p-5 colorWhite">
-                    <form method="POST">
-                        <h4 className="fontRoboBold fontSize1-5vw">DỊCH VỤ KHÁM</h4>
+                    <form method="POST" className="py-3">
+                        <h4 className="fontRoboBold fontSize1-5vw pt-5 pb-3">DỊCH VỤ KHÁM</h4>
                         <div className="form-row">
                             <div className="form-group col-md-5">
                                 <label className="fontRoboLightItalic fontSize1-2vw">Chọn dịch vụ *</label>
@@ -80,8 +80,8 @@ const FormReview = () => {
             
                     <div className="col-md-5 bgGreen p-5">
                         <div className="container-fluid colorBlue">
-                            <div className="container text-center">
-                                <h3 className="fontSize2vw fontRoboBold">Ý KIẾN CỦA NGƯỜI BỆNH</h3>
+                            <div className="container text-center py-3">
+                                <h3 className="fontSize2vw fontRoboBold pt-5">Ý KIẾN CỦA NGƯỜI BỆNH</h3>
                             </div>
                             <div id="carouselExampleControls" className="carousel slide p-5" data-ride="carousel">
                                 { /* <!--<ol class="carousel-indicators">

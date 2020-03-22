@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <div>
-            <div className="container-fluid p-5 bgPhotoEnd">
+            <div className="container-fluid p-5 bgPhotoEnd p-5">
                 <div className="row">
                     <div className="col-md-4">
                         <h4 className="fontRoboBold fontSize1-5vw colorDarkBlue">PHÒNG KHÁM CHUYÊN KHOA<br/>TAI-MŨI-HỌNG</h4>
