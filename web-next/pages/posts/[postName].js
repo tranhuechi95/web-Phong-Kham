@@ -7,7 +7,7 @@ const OtherTopics = (props) => {
     const otherTopics = props.posts.filter(post => post.postName != props.currPostName);
     return (
         <div className="col-md-4 vl colScroll">
-            <h3 className="fontSize1-5vw fontSansation pt-3 text-center">CÁC CHỦ ĐỀ BÀI VIẾT KHÁC</h3>
+            <h3 className="fontSize1-5vw fontSansation pt-4 text-center">CÁC CHỦ ĐỀ BÀI VIẾT KHÁC</h3>
             {
                 otherTopics.map(topic => (
                     <div className="timelineContainer pt-4" key={topic.id}>
@@ -74,8 +74,8 @@ const mainPost = props => {
 
     // how do I get the name of this post name?
     return (
-        <Layout>
-            <h3 className="colorDarkBlue fontSansation fontSize1-5vw pl-5 ml-5 pt-3">{currName[0].name}</h3>
+        <Layout title={`Tin Tức ${currName[0].name}`}>
+            <h3 className="colorDarkBlue fontSansation fontSize1-5vw pl-5 ml-5 pt-5">{currName[0].name}</h3>
             <div className="container-fluid m-4">
                 <div className="row">            
                     <div className="col-md-1">

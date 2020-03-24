@@ -71,7 +71,7 @@ const PostContent = (props) => {
 
     // how do I get the name of this post name?
     return (
-        <Layout>
+        <Layout title={currArticle[0].name}>
             <Link href="/posts/[postName]" as={`/posts/${currTopic[0].postName}`}>
                 <a><h3 className="colorDarkBlue fontSansation fontSize1-5vw pl-5 ml-5 pt-3">Trang chính {currTopic[0].name}</h3></a>
             </Link>

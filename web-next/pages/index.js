@@ -8,14 +8,16 @@ import News from "../components/News";
 import Test from "../components/test";
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
+import TestForm from "../components/test";
 
 
 const Index = () => (
-    <Layout>
+    <Layout title="Trang Chủ">
         <Banner/>
         <Reason/>
         <Service/>
         <DoctorTeam/>
+        {/* <FormReview/> */}
         <FormReview/>
         <News/>
     </Layout>

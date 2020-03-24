@@ -5,7 +5,7 @@ import Gallery from "../components/Gallery";
 
 const About = () => {
     return (
-        <Layout>
+        <Layout title="Giới thiệu phòng khám">
             <AboutUs />
             <Timeline />
             <Gallery />
