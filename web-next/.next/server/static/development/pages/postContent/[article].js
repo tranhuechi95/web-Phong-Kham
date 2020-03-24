@@ -2318,7 +2318,7 @@ const CurrArticleContent = props => {
     as: `/postContent/${article.articleName}`,
     key: article.id
   }, __jsx("a", null, __jsx("h4", {
-    className: "colorDarkBlue fontSize1-2vw align-left"
+    className: "colorDarkBlue fontSize1-2vw align-left fontRoboLight"
   }, article.name))))));
 };
 

@@ -5644,7 +5644,7 @@ var CurrArticleContent = function CurrArticleContent(props) {
       as: "/postContent/".concat(article.articleName),
       key: article.id
     }, __jsx("a", null, __jsx("h4", {
-      className: "colorDarkBlue fontSize1-2vw align-left"
+      className: "colorDarkBlue fontSize1-2vw align-left fontRoboLight"
     }, article.name)));
   })));
 };

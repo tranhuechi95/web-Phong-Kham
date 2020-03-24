@@ -44,7 +44,7 @@ const CurrArticleContent = (props) => {
                 {
                     relatedArticles.map(article => (
                         <Link href="/postContent/[article]" as={`/postContent/${article.articleName}`} key={article.id}>
-                            <a><h4 className="colorDarkBlue fontSize1-2vw align-left">{article.name}</h4></a>
+                            <a><h4 className="colorDarkBlue fontSize1-2vw align-left fontRoboLight">{article.name}</h4></a>
                         </Link>   
                         )
                     )
