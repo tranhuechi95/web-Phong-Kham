@@ -1,4 +1,3 @@
-// API key AIzaSyC3TUExbphpPwnAkroetY5-o8iCuK7MBfo
 import { Component } from 'react';
 import 'isomorphic-fetch';
 
