@@ -26,14 +26,17 @@ const OtherTopics = (props) => {
 
 const CurrArticleContent = (props) => {
     const relatedArticles = props.relatedArticles.slice(0,4);
+    const paragraphs = props.currArticle.content.split("\n");
     return (
         <div className="col-md-6 py-2">
             <div>
                 {/* <!-- illustration image --> */}
                 <h3 className="colorDarkBlue fontRoboBold fontSize1-5vw pt-3">{props.currArticle.name}</h3>
-                <img className="img-fluid borderRect" src={`../../static/assets/template/images/${props.currArticle.image}`}/>
+                <img className="img-fluid borderRect mb-4" src={`../../static/assets/template/images/${props.currArticle.image}`}/>
                 {/* <!-- short excerpt of the article--> */}
-                <p className="fontRoboLight fontSize1-2vw text-justify pt-4">{props.currArticle.content}</p>
+                { paragraphs.map( paragraph => (
+                    <p className="fontRoboLight fontSize1-2vw text-justify">{paragraph}</p>
+                ))}
                 <p className="fontRoboBold fontSize1vw text-right">PGS.TS.BS. Phạm Thị Bích Đào</p>    
             </div>
 
