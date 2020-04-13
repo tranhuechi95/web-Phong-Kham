@@ -1,12 +1,12 @@
 {
-  "name": "web-next",
+  "name": "bacsidao",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "next build && next start -p $PORT"
   },
   "keywords": [],
   "author": "",
