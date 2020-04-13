@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout"
 import posts from '../../static/topic.json'
-import postContent from '../../static/postContent.json'
+import postContent from '../../static/normalized_data.json'
 import Link from 'next/link'
 
 const OtherTopics = (props) => {

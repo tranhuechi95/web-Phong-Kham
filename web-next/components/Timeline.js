@@ -5,7 +5,7 @@ const Timeline = () => {
                 <img src="../static/assets/template/images/timeline3.png" className="img-fluid"/>
                 <p className="topRowMid fontSize1-3vw text-left">Phòng khám chuyển về <strong>số 29, ngõ 41, phố Vũ Ngọc Phan, Đống Đa, Hà Nội.</strong>Phòng khám đã không ngừng phát triển, tăng mạnh cả về số lượng bác sĩ, chất lượng dịch vụ cũng như số lượng bệnh nhân khám mỗi ngày.</p>
                 <p className="bottomRowLeft fontSize1-3vw text-left">Được thành lập với quy mô ban đầu chỉ là một phòng khám nhỏ trên đường Giảng Võ, do chính <strong>PGS.TS.BS. Phạm Thị Bích Đào </strong>đứng khám và chẩn trị.</p>
-                <p className="bottomRowRight fontSize1-3vw text-left">Đến nay phòng khám đã trờ thành một đại chỉ đáng tin cậy trong việc chẩn đoán và điều trị các bệnh lý tai mũi họng ở người lớn và trẻ em.</p>
+                <p className="bottomRowRight fontSize1-3vw text-left">Đến nay phòng khám đã trờ thành một địa chỉ đáng tin cậy trong việc chẩn đoán và điều trị các bệnh lý tai mũi họng ở người lớn và trẻ em.</p>
             </div>
 
             { /* <!-- Thời gian làm việc và đội ngũ bác sĩ --> */ }

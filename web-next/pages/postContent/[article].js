@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout"
 import posts from '../../static/topic.json'
-import postContent from '../../static/postContent.json'
+import postContent from '../../static/normalized_data.json'
 import Link from 'next/link'
 
 const OtherTopics = (props) => {
@@ -25,7 +25,7 @@ const OtherTopics = (props) => {
 }
 
 const CurrArticleContent = (props) => {
-    const relatedArticles = props.relatedArticles.slice(0,4);
+    const relatedArticles = props.relatedArticles.slice(0,7);
     const paragraphs = props.currArticle.content.split("\n");
     return (
         <div className="col-md-6 py-2">
@@ -60,10 +60,10 @@ const CurrArticleContent = (props) => {
 const PostContent = (props) => {
     // we have the web name here
     const currArticleWebName = props.currArticleWebName;
-    //console.log(currArticleWebName)
+    console.log(currArticleWebName)
     // we get the aritcle name to display here
     const currArticle = postContent.filter(post => post.articleName == currArticleWebName)
-    //console.log(currArticle)
+    // console.log(currArticle[0].postName)
 
     const currTopic = posts.filter(topic => topic.postName == currArticle[0].postName)
     //console.log(currTopic)
