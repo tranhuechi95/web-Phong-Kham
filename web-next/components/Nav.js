@@ -2,12 +2,11 @@ import posts from '../static/topic.json'
 import Link from './ActiveLink'
 
 const Nav = () => {
-    const firstTopic = posts[0];
     return (
     <div className="container-fluid mx-5">
         <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             
-            <img src="../static/assets/template/images/logo.png" style={{width: "10vw"}}/>
+            <img src="../static/assets/template/images/logo.jpg" style={{width: "5vw"}}/>
             
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,16 +41,21 @@ const Nav = () => {
                         
                     </li>
                     <li className="nav-item">
-                        <Link href="/posts/[postName]" as={`/posts/${firstTopic.postName}`} activeClassName='active'>
-                            <a className="nav-link">TIN TỨC</a>
-                        </Link>
-                        
-                    </li>
-                    <li className="nav-item">
                         <Link href={`/#formDatLich`} activeClassName='active'>
                             <a className="nav-link">ĐẶT LỊCH KHÁM-LIÊN HỆ</a>
-                        </Link>
-                        
+                        </Link>   
+                    </li>
+                    <li className="nav-item"> 
+                        <div className="dropdown show">
+                            <a className="btn btn-success dropdown-toggle" role="button" id="dropdownNews" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TIN TỨC</a>
+                            <div className="dropdown-menu" aria-labelledby="dropdownNews">
+                            {	posts.map(post => (
+                                <Link href="/posts/[postName]" as={`/posts/${post.postName}`} key={`post.id`}>
+                                    <a className="nav-link dropdown-item fontRoboLight">{post.name}</a>
+                                </Link>
+                                    ))}
+                            </div>  
+                        </div>    
                     </li>
                 </ul>
                 

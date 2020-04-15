@@ -2,84 +2,96 @@
  {
     "id": 1,
     "name": "VIÊM NHIỄM",
-    "image": "t1-sm.png",
+    "image": "viem-nhiem.png",
+    "smImage": "sm-viem-nhiem.png",
     "postName": "viem-nhiem",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
     "id": 2,
     "name": "THUỐC - KHÁNG SINH",
-    "image": "t1-sm.png",
+    "image": "thuoc-khang-sinh.png",
+    "smImage": "sm-thuoc-khang-sinh.png",
     "postName": "thuoc-khang-sinh",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
     "id": 3,
     "name": "Covid-19",
-    "image": "t1-sm.png",
+    "image": "Covid19-tin-tuc.png",
+    "smImage": "sm-Covid19-tin-tuc.png",
     "postName": "covid-19-tin-tuc",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
     "id": 4,
     "name": "VIRUS - VI KHUẨN",
-    "image": "t1-sm.png",
+    "image": "virus-vi-khuan.png",
+    "smImage": "sm-virus-vi-khuan.png",
     "postName": "virus-vi-khuan",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
     "id": 5,
     "name": "CÁC BỆNH VỀ HÔ HẤP",
-    "image": "t1-sm.png",
+    "image": "cac-benh-ve-ho-hap.png",
+    "smImage": "sm-cac-benh-ve-ho-hap.png",
     "postName": "cac-benh-ve-ho-hap",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
     "id": 6,
     "name": "UNG THƯ",
-    "image": "t1-sm.png",
+    "image": "ung-thu.png",
+    "smImage": "sm-ung-thu.png",
     "postName": "ung-thu",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
     "id": 7,
-    "name": "THANH QUẢN - GIỌNG NÓI",
-    "image": "t1-sm.png",
+    "name": "THANH QUẢN - GIỌNG NÓI - HỌNG",
+    "image": "thanh-quan-giong-noi.png",
+    "smImage": "sm-thanh-quan-giong-noi.png",
     "postName": "thanh-quan-giong-noi",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
     "id": 8,
     "name": "CÚM",
-    "image": "t1-sm.png",
+    "image": "cum.png",
+    "smImage": "sm-cum.png",
     "postName": "cum",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
     "id": 9,
-    "name": "TỎNG HỢP",
-    "image": "t1-sm.png",
+    "name": "TỔNG HỢP",
+    "image": "tong-hop.png",
+    "smImage": "sm-tong-hop.png",
     "postName": "tong-hop",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
     "id": 10,
     "name": "KIẾN THỨC PHÒNG BỆNH",
-    "image": "t1-sm.png",
+    "image": "kien-thuc-phong-benh.png",
+    "smImage": "sm-kien-thuc-phong-benh.png",
     "postName": "kien-thuc-phong-benh",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
     "id": 11,
     "name": "CHÓNG MẶT",
-    "image": "t1-sm.png",
+    "image": "chong-mat.png",
+    "smImage": "sm-chong-mat.png",
     "postName": "chong-mat",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
     "id": 12,
     "name": "CÁC BỆNH VỀ TAI",
-    "image": "t1-sm.png",
+    "image": "cac-benh-ve-tai.png",
+    "smImage": "sm-cac-benh-ve-tai.png",
     "postName": "cac-benh-ve-tai",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   }

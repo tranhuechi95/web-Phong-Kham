@@ -7,14 +7,15 @@ const OtherTopics = (props) => {
     // filter from posts to get all the postName that is not the same as our current article's postName
     const otherTopics = posts.filter(post => post.postName != props.currArticle.postName);
     return (
-        <div className="col-md-4 vl-short colScroll">
-            <h3 className="fontSize1-5vw fontSansation pt-3 text-center">CÁC CHỦ ĐỀ BÀI VIẾT KHÁC</h3>
+        <div className="col-md-4 vl-short colScroll mt-5">
+            <h3 className="fontSize1-5vw fontSansation pt-1 text-center">CÁC CHỦ ĐỀ BÀI VIẾT KHÁC</h3>
             {
                 otherTopics.map(topic => (
-                    <div className="timelineContainer pt-5" key={topic.id}>
+                    <div className="timelineContainer pt-1" key={topic.id}>
                         <Link href="/posts/[postName]" as={`/posts/${topic.postName}`}> 
-                            <a><img className="img-fluid" src={`../../static/assets/template/images/${topic.image}`}/>
-                                <p className="textBelow colorWhite fontSize1vw">{topic.name}</p>
+                            <a>
+                                <h5 className="colorBlue fontSize1-5vw fontRoboBold">{topic.name}</h5>
+                                <img className="img-fluid" src={`../../static/assets/template/images/${topic.smImage}`}/>
                             </a>
                         </Link>
                     </div>

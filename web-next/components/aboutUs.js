@@ -1,7 +1,7 @@
 const AboutUs = () => {
     return (
         <div>
-            <div className="container-fluid bgGreen fontSansation colorDarkBlue text-center p-5">
+            <div className="container-fluid bgGreen fontSansation colorDarkBlue text-center p-5 mt-1">
                 <h3 className="fontSize1-5vw">PHÒNG KHÁM CHUYÊN KHOA</h3>
                 <h2 className="fontSize2vw">TAI MŨI HỌNG</h2>
                 <h3 className="fontSize1-5vw">PGS.TS.BS. PHẠM THỊ BÍCH ĐÀO</h3>

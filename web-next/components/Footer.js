@@ -37,7 +37,7 @@ class Footer extends Component{
                     <div className="row">
                         <div className="col-md-4">
                             <h4 className="fontRoboBold fontSize1-5vw colorDarkBlue">PHÒNG KHÁM CHUYÊN KHOA<br/>TAI-MŨI-HỌNG</h4>
-                            <img className="py-2 borderRound borderWhite" src="../static/assets/template/images/logo.png" style={{width: "10vw"}}/>
+                            <img className="py-2 borderRound borderWhite" src="../static/assets/template/images/logo.jpg" style={{width: "10vw"}}/>
                             <h5 className="fontRoboLight fontSize1-2vw pt-1"><i className="fas fa-map-marker-alt pr-2"></i>Số 29, Ngõ 41, Phố Vũ Ngọc Phan, Quận Đống Đa, Hà Nội</h5>
                             <h5 className="fontRoboLight fontSize1-2vw pt-1"><i className="fas fa-phone pr-2"></i>0912.189.853</h5>
                             <h5 className="fontRoboLight fontSize1-2vw pt-1"><i className="fas fa-envelope pr-2"></i>pktiensiphamthibichdao@gmail.com</h5>

@@ -2,7 +2,7 @@ const DoctorTeam = () => {
     return (
     <div>
         <div id="BacSiTeam" className="container-fluid text-center p-5">
-            <p className="fontSansation pt-5 fontSize3vw">
+            <p className="fontSansation fontSize3vw">
                 <span className="colorBlue">ĐỘI NGŨ </span>
                 <span className="colorGreen">BÁC SĨ</span>
             </p> 
@@ -12,7 +12,7 @@ const DoctorTeam = () => {
                     <div className="card-deck fontSize1vw">
                         <a data-toggle="collapse" href={`#collapse1`}>
                             <div className="card">
-                                <img className="card-img-top" src="../static/assets/template/images/bsiDao.jpg" alt="Card image cap"/>
+                                <img className="card-img-top" src="../static/assets/template/images/bacsiDao.png" alt="PGS.TS.BS Phạm Thị Bích Đào"/>
                                 <div className="card-body card-body-DichVu">
                                     <h5 className="card-text colorBlue fontSize1-5vw fontRoboBold">PGS.TS.BS<br/>PHẠM THỊ BÍCH ĐÀO</h5>
                                 </div>
@@ -23,11 +23,11 @@ const DoctorTeam = () => {
                             <div className="card">
                                 <div className="card-body">                                
                                     <p className="card-title fontRoboBold fontSize1-5vw">Hơn 20 năm kinh nghiệm</p>
-                                    <div className="card-text fontRoboLight colorGrey">
+                                    <div className="card-text fontRoboLight colorGrey fontSize1-5vw">
                                         <li>1996 Nội trú Bệnh viện - chuyên ngành Tai Mũi Họng</li>
                                         <li>2011 Tiến sĩ chuyên ngành Tai Mũi Họng</li>
                                         <li>2018 Được phong hàn Phó Giáo Sư y học</li>
-                                        <li>1999 - nay, Giảng viên bộ môn TMH trường đại học Y Hà Nội - Bác sĩ khám và điệ trị tại bệnh viện đại học Y Hà Nội</li>               
+                                        <li>1999 - nay, Giảng viên bộ môn TMH trường đại học Y Hà Nội - Bác sĩ khám và điều trị tại bệnh viện đại học Y Hà Nội</li>               
                                     </div>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@ const DoctorTeam = () => {
                     
                         <a data-toggle="collapse" href={`#collapse2`}>
                             <div className="card">
-                                <img className="card-img-top" src="../static/assets/template/images/bsiDao.jpg" alt="Card image cap"/>
+                                <img className="card-img-top" src="../static/assets/template/images/bacsiDao.png" alt="Card image cap"/>
                                 <div className="card-body card-body-DichVu">
                                     <h5 className="card-text colorBlue fontSize1-5vw fontRoboBold">VIÊM MŨI-XOANG</h5>
                                 </div>
@@ -54,7 +54,7 @@ const DoctorTeam = () => {
                         
                         <a data-toggle="collapse" href={`#collapse3`}>
                             <div className="card">
-                                <img className="card-img-top" src="../static/assets/template/images/bsiDao.jpg" alt="Card image cap"/>
+                                <img className="card-img-top" src="../static/assets/template/images/bacsiDao.png" alt="Card image cap"/>
                                 <div className="card-body card-body-DichVu">
                                     <h5 className="card-text colorBlue fontSize1-5vw fontRoboBold">VIÊM MŨI-XOANG</h5>
                                 </div>
@@ -71,7 +71,7 @@ const DoctorTeam = () => {
                     
                         <a data-toggle="collapse" href={`#collapse4`}>
                             <div className="card">
-                                <img className="card-img-top" src="../static/assets/template/images/bsiDao.jpg" alt="Card image cap"/>
+                                <img className="card-img-top" src="../static/assets/template/images/bacsiDao.png" alt="Card image cap"/>
                                 <div className="card-body card-body-DichVu">
                                     <h5 className="card-text colorBlue fontSize1-5vw fontRoboBold">VIÊM MŨI-XOANG</h5>
                                 </div>

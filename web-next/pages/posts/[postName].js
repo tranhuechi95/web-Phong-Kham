@@ -6,15 +6,18 @@ import Link from 'next/link'
 const OtherTopics = (props) => {
     const otherTopics = props.posts.filter(post => post.postName != props.currPostName);
     return (
-        <div className="col-md-4 vl colScroll">
-            <h3 className="fontSize1-5vw fontSansation pt-4 text-center">CÁC CHỦ ĐỀ BÀI VIẾT KHÁC</h3>
+        <div className="col-md-4 vl colScroll mt-2">
+            <h3 className="fontSize1-5vw fontSansation text-center">CÁC CHỦ ĐỀ BÀI VIẾT KHÁC</h3>
             {
                 otherTopics.map(topic => (
                     <div className="timelineContainer pt-4" key={topic.id}>
                         <Link href="/posts/[postName]" as={`/posts/${topic.postName}`}> 
-                            <a><img className="img-fluid" src={`../../static/assets/template/images/${topic.image}`}/>
-                                <p className="textBelow colorWhite fontSize1vw">{topic.name}</p>
+                            <a>
+                                <h5 className="colorBlue fontSize1-5vw fontRoboBold">{topic.name}</h5>
+                                <img className="img-fluid" src={`../../static/assets/template/images/${topic.smImage}`}/>
+                                {/* <p className="textBelow colorWhite fontSize1vw">{topic.name}</p> */}
                             </a>
+                            
                         </Link>
                     </div>
                 ))
@@ -27,13 +30,13 @@ const MainTopicArticles = (props) => {
     // filter out the 1st article
     const otherArticles = props.mainTopicPosts.filter(article => article.id != props.mainTopicPosts[0].id);
     return (
-        <div className="col-md-6 py-2 text-justify">
+        <div className="col-md-6 text-justify">
             <div>
                 {/* <!-- illustration image --> */}
                 <img className="img-fluid borderRect" src={`../../static/assets/template/images/${props.mainTopicPosts[0].image}`}/>
                 <Link href="/postContent/[article]" as={`/postContent/${props.mainTopicPosts[0].articleName}`}>
                     <a>
-                        <h3 className="colorDarkBlue fontRoboBold fontSize1-5vw pt-3">
+                        <h3 className="colorDarkBlue fontRoboBold fontSize1-5vw pt-1">
                             {props.mainTopicPosts[0].name}
                         </h3>
                     </a>
@@ -48,7 +51,7 @@ const MainTopicArticles = (props) => {
                 otherArticles.map(article => (
                     <div key={article.id}>
                         <hr/>
-                        <div className="row pt-4">
+                        <div className="row pt-2">
                             <div className="col-md-3">
                                 <img className="img-fluid" src={`../../static/assets/template/images/${article.image}`}/>
                             </div>
@@ -75,7 +78,7 @@ const mainPost = props => {
     // how do I get the name of this post name?
     return (
         <Layout title={`Tin Tức ${currName[0].name}`}>
-            <h3 className="colorDarkBlue fontSansation fontSize1-5vw pl-5 ml-5 pt-5">{currName[0].name}</h3>
+            <h3 className="colorDarkBlue fontSansation fontSize1-5vw pl-5 pt-2 ml-5">{currName[0].name}</h3>
             <div className="container-fluid m-4">
                 <div className="row">            
                     <div className="col-md-1">

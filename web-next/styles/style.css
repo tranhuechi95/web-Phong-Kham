@@ -281,3 +281,7 @@ item {
   height: 700px;
   overflow-y: scroll;
 }
+
+.navbar{
+  height: 50px;
+}

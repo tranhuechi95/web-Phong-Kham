@@ -2,7 +2,7 @@ const Service = () => {
     return (
         <div>
             <div id="DichVu" className="container-fluid bgGreen text-center p-5">
-                <p className="fontSansation pt-5">
+                <p className="fontSansation">
                     <span className="colorBlue">DỊCH VỤ TẠI </span>
                     <span className="colorWhite">PHÒNG KHÁM</span>
                 </p> 
@@ -15,31 +15,31 @@ const Service = () => {
                         <div className="card borderRound borderBlue">
                             <img className="card-img-top" src="../static/assets/template/images/hinh-1.png" alt="Card image cap"/>
                             <div className="card-body card-body-DichVu">
-                                <h5 className="card-text colorBlue fontSize1-5vw fontRoboBold">VIÊM MŨI-XOANG</h5>
+                                <h5 className="card-text colorBlue fontSize1-2vw fontRoboBold">VIÊM MŨI-XOANG</h5>
                             </div>
                         </div>
                         <div className="card borderRound borderBlue">
                             <img className="card-img-top" src="../static/assets/template/images/hinh-2.png" alt="Card image cap"/>
                             <div className="card-body card-body-DichVu">
-                                <h5 className="card-text colorBlue fontSize1-5vw fontRoboBold">VIÊM TAI GIỮA</h5>
+                                <h5 className="card-text colorBlue fontSize1-2vw fontRoboBold">VIÊM TAI GIỮA</h5>
                             </div>
                         </div>
                         <div className="card borderRound borderBlue">
                             <img className="card-img-top" src="../static/assets/template/images/hinh-3.png" alt="Card image cap"/>
                             <div className="card-body card-body-DichVu">
-                                <h5 className="card-text colorBlue fontSize1-5vw fontRoboBold">VIÊM HỌNG</h5>
+                                <h5 className="card-text colorBlue fontSize1-2vw fontRoboBold">VIÊM HỌNG</h5>
                             </div>
                         </div>
                         <div className="card borderRound borderBlue">
                             <img className="card-img-top" src="../static/assets/template/images/hinh-4.png" alt="Card image cap"/>
                             <div className="card-body card-body-DichVu">
-                                <h5 className="card-text colorBlue fontSize1-5vw fontRoboBold">VIÊM THANH QUẢN<br/>KHÀN TIẾNG</h5>
+                                <h5 className="card-text colorBlue fontSize1-2vw fontRoboBold">VIÊM THANH QUẢN<br/>KHÀN TIẾNG</h5>
                             </div>
                         </div>
                         <div className="card borderRound borderBlue">
                             <img className="card-img-top" src="../static/assets/template/images/hinh-5.png" alt="Card image cap"/>
                             <div className="card-body card-body-DichVu">
-                                <h5 className="card-text colorBlue fontSize1-5vw fontRoboBold">VIÊM PHẾ QUẢN</h5>
+                                <h5 className="card-text colorBlue fontSize1-2vw fontRoboBold">VIÊM PHẾ QUẢN</h5>
                             </div>
                         </div>
                     </div>

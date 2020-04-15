@@ -6,9 +6,15 @@ import Gallery from "../components/Gallery";
 const About = () => {
     return (
         <Layout title="Giới thiệu phòng khám">
-            <AboutUs />
-            <Timeline />
-            <Gallery />
+            <div className="row">
+                <div className="col-md-10">
+                    <AboutUs />
+                    <Timeline />
+                    <Gallery />
+                </div>
+                <div className="col-md-2"></div>
+            </div>
+            
         </Layout>
         
     )

@@ -51,7 +51,7 @@ class FormReview extends Component{
                 {/* <!-- Form -->*/}
                     <div id="formDatLich" className="col-md-6 bgDarkBlue p-5 colorWhite">
                         <form method="POST" className="py-3" onSubmit={this.handleSubmit}>
-                            <h4 className="fontRoboBold fontSize1-5vw pt-5 pb-3">DỊCH VỤ KHÁM</h4>
+                            <h4 className="fontRoboBold fontSize1-5vw pb-3">DỊCH VỤ KHÁM</h4>
                             <div className="form-row">
                                 <div className="form-group col-md-5">
                                     <label className="fontRoboLightItalic fontSize1-2vw">Chọn dịch vụ *</label>
@@ -124,19 +124,19 @@ class FormReview extends Component{
     
                     </div>
                 
-                        <div className="col-md-5 bgGreen p-5">
+                        <div className="col-md-5 bgGreen p-3">
                             <div className="container-fluid colorBlue">
                                 <div className="container text-center py-3">
                                     <h3 className="fontSize2vw fontRoboBold pt-5">Ý KIẾN CỦA NGƯỜI BỆNH</h3>
                                 </div>
-                                <div id="carouselExampleControls" className="carousel slide p-5" data-ride="carousel">
+                                <div id="carouselExampleControls" className="carousel slide p-3" data-ride="carousel">
                                     { /* <!--<ol class="carousel-indicators">
                                         <li data-target="#carouselExampleControls" data-slide-to="0" className="active"></li>
                                         <li data-target="#carouselExampleControls" data-slide-to="1"></li>
                                         <li data-target="#carouselExampleControls" data-slide-to="2"></li>
                                     </ol>--> */}
                             
-                                    <div className="carousel-inner px-2">
+                                    <div className="carousel-inner">
                                         <div className="carousel-item active">
                                             <div className="row text-center">
                                                 <div className="col">
@@ -144,8 +144,8 @@ class FormReview extends Component{
                                                 </div>
                                             </div>
                                             <br/>    
-                                            <div className="row text-center p-3">
-                                                <p className="fontSize1-2vw fontRoboReg">"Tôi bị viêm xoang từ lâu, bên trong mũi nhiều mủ và tiếp tục đau âm ỉ rất khó chịu. Sau khi đến phòng khám, được bác sĩ chẩn đoán sử dụng máy nội soi và tận tình chữa bệnh thì nay đã hết viêm xoang. Cám ơn bác sĩ Đào và phòng khám!"</p>
+                                            <div className="row text-center">
+                                                <p className="fontSize1-2vw fontRoboReg px-3">"Tôi bị viêm xoang từ lâu, bên trong mũi nhiều mủ và đau âm ỉ rất khó chịu. Sau khi đến phòng khám, được bác sĩ chẩn đoán sử dụng máy nội soi và tận tình chữa bệnh thì nay đã hết viêm xoang. Cám ơn bác sĩ Đào và phòng khám!"</p>
                                             </div>
                                             <div className="container text-center p-3">
                                                 <p className="fontSize1-2vw fontRoboReg">---NGỌC ANH---<br/>Kế toán ngân hàng</p>
@@ -160,10 +160,10 @@ class FormReview extends Component{
                                                 </div>
                                             </div>
                                             <br/>    
-                                            <div className="row text-center p-3">
+                                            <div className="row text-center px-3">
                                                 <p className="fontSize1-2vw fontRoboReg">"Mình đến khám 1 lần thôi là khỏi luôn chứng đau họng dài ngày, mà chỉ cần dùng ít thuốc! Khỏi bệnh <br/>rất nhanh, quy trình khám đơn giản 👍🏿"</p>
                                             </div>
-                                            <div className="container text-center p-3">
+                                            <div className="container text-center">
                                                 <p className="fontSize1-2vw fontRoboReg">---MINH GIANG---<br/>Sinh viên</p>
                                             </div>
                                         </div>
@@ -174,7 +174,7 @@ class FormReview extends Component{
                                                 </div>
                                             </div>
                                             <br/>    
-                                            <div className="row text-center p-3">
+                                            <div className="row text-center px-3">
                                                 <p className="fontSize1-2vw fontRoboReg">"Bác sĩ nhẹ nhàng, chuyên khoa rất tốt điều trị bệnh dứt điểm"</p>
                                             </div>
                                             <div className="container text-center p-3">
