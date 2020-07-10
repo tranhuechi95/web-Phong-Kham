@@ -81,7 +81,7 @@ const CustomerReview = () => {
     return (
         <div className="container-fluid colorBlue">
             <div className="container text-center py-3">
-                <h3 className="fontSize2vw fontRoboBold pt-5">Ý KIẾN CỦA NGƯỜI BỆNH</h3>
+                <h3 className="fontSize1-5vw fontRoboBold pt-5">Ý KIẾN CỦA NGƯỜI BỆNH</h3>
             </div>
             <div id="carouselExampleControls" className="carousel slide p-3" data-ride="carousel">
                 { /* <!--<ol class="carousel-indicators">

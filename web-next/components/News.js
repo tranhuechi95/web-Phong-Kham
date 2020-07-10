@@ -3,7 +3,7 @@ import posts from '../static/topic.json';
 
 const NewsCardDeck = (props) => (
     props.posts.map(post => (
-        <div className="card" key={post.id}>
+        <div className="card card-news-container" key={post.id}>
             <img className="card-img-top" src={`../static/assets/template/images/${post.image}`} alt="Card image cap"/>
             <Link href="/posts/[postName]" as={`/posts/${post.postName}`}>
                 <a title="test"><div className="card-body card-body-DichVu">

@@ -6,13 +6,14 @@ import DoctorTeam from "../components/doctorTeam";
 import FormReview from "../components/FormReview.js";
 import News from "../components/News";
 import fetch from 'isomorphic-unfetch';
-
-
+import Nav from '../components/Nav';
 
 const Index = () => (
     <Layout title="Trang Chủ">
         <div className="row">
+            <div className="col-md-1"></div>
             <div className="col-md-10">
+                <Nav />
                 <Banner/>
                 <Reason/>
                 <Service/>
@@ -21,9 +22,8 @@ const Index = () => (
                 <FormReview/>
                 <News/>
             </div>
-            <div className="col-md-2"></div>
-        </div>
-        
+            <div className="col-md-1"></div>
+        </div>  
     </Layout>
   );
   

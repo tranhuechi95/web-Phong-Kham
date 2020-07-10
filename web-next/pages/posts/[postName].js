@@ -6,18 +6,17 @@ import Link from 'next/link'
 const OtherTopics = (props) => {
     const otherTopics = props.posts.filter(post => post.postName != props.currPostName);
     return (
-        <div className="col-md-4 vl colScroll mt-2">
+        <div>
             <h3 className="fontSize1-5vw fontSansation text-center">CÁC CHỦ ĐỀ BÀI VIẾT KHÁC</h3>
             {
                 otherTopics.map(topic => (
-                    <div className="timelineContainer pt-4" key={topic.id}>
+                    <div className="pt-4" key={topic.id}>
                         <Link href="/posts/[postName]" as={`/posts/${topic.postName}`}> 
                             <a>
-                                <h5 className="colorBlue fontSize1-5vw fontRoboBold">{topic.name}</h5>
-                                <img className="img-fluid" src={`../../static/assets/template/images/${topic.smImage}`}/>
+                                <img className="img-fluid otherTopics-img-container" src={`../../static/assets/template/images/${topic.smImage}`}/>
+                                <h5 className="colorBlue fontSize1-5vw fontRoboBold text-center">{topic.name}</h5>
                                 {/* <p className="textBelow colorWhite fontSize1vw">{topic.name}</p> */}
                             </a>
-                            
                         </Link>
                     </div>
                 ))
@@ -30,7 +29,7 @@ const MainTopicArticles = (props) => {
     // filter out the 1st article
     const otherArticles = props.mainTopicPosts.filter(article => article.id != props.mainTopicPosts[0].id);
     return (
-        <div className="col-md-6 text-justify">
+        <div>
             <div>
                 {/* <!-- illustration image --> */}
                 <img className="img-fluid borderRect" src={`../../static/assets/template/images/${props.mainTopicPosts[0].image}`}/>
@@ -78,16 +77,23 @@ const mainPost = props => {
     // how do I get the name of this post name?
     return (
         <Layout title={`Tin Tức ${currName[0].name}`}>
-            <h3 className="colorDarkBlue fontSansation fontSize1-5vw pl-5 pt-2 ml-5">{currName[0].name}</h3>
             <div className="container-fluid m-4">
                 <div className="row">            
                     <div className="col-md-1">
                     </div>
-                    {/* MainTopicArticles has className="col-md-6" */}
-                    <MainTopicArticles mainTopicPosts={mainTopicPosts}/>
-                    {/* <!-- for other topics --> */}
-                    {/* OtherTopics has className="col-md-4" */}
-                    <OtherTopics posts={posts} currPostName={currPostName}/>
+                    <div className="col-md-10">
+                        <div className="row">
+                            <div className="col-md-8 text-justify">
+                                <h3 className="colorDarkBlue fontSansation fontSize1-5vw">{currName[0].name}</h3>
+                                <MainTopicArticles mainTopicPosts={mainTopicPosts}/>
+                            </div>
+                            
+                            <div className="col-md-4 colScroll">
+                                <OtherTopics posts={posts} currPostName={currPostName}/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-1"></div>
                 </div>
             </div>
         </Layout>

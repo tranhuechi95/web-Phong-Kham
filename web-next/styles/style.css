@@ -4,7 +4,7 @@ html {
 
 body {
   font-family: sans-serif;
-  padding-top: 4vw;
+  padding-top: 50px;
 }
 
 /* for the nav-bar */
@@ -87,30 +87,39 @@ span {
 /* font size */
 
 .fontSize1vw {
-  font-size: 1vw;
+  font-size: max(11px, 1vw);
 }
 
 .fontSize1-2vw {
-  font-size: 1.2vw;
+  font-size: max(12px, 1.2vw);
 }
 
 .fontSize1-3vw {
-  font-size: 1.3vw;
+  font-size: max(12px, 1.3vw);
 }
 
 .fontSize1-5vw {
-  font-size: 1.5vw;
+  font-size: max(15px, 1.5vw);
 }
 
 .fontSize2vw {
-  font-size: 2vw;
+  font-size: max(20px, 2vw);
 }
 
 .fontSize3vw {
-  font-size: 3vw;
+  font-size: max(25px, 3vw);
+}
+
+/* font for timeline text only */
+.fontSize-timeline-text {
+  font-size: max(11px, 1.2vw);
 }
 
 /* background color class */
+.bgWhite {
+  background-color: white;
+}
+
 .bgGreen {
   background-color: #43D4A1;
 }
@@ -123,7 +132,7 @@ span {
   background-color: #0C3B5A;
 }
 
-/* background imgge*/
+/* background image*/
 .bgPhotoEnd {
   background-image: url('../static/assets/template/images/endblock.png');
 }
@@ -159,12 +168,86 @@ span {
   border-width: medium;
 }
 
+/* for navbar collapse */
+.navbar-toggler-icon {
+  height: 30px;
+}
+.nav-item {
+  text-align: right;
+  margin-right: 10px;
+}
 
-/* align content of card-body to center */
+/* for dropdown of News in navbar */
+.dropdown-menu {
+  border: none;
+}
+.dropdown-item {
+  text-align: right;
+}
+
+/* for image in card in Reason*/
+.card-container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 50%;
+}
+.card-img-container {
+  max-width: 60px;
+  height: 140px;
+  margin-bottom: 10px;
+}
+.card-img {
+  margin-bottom: 10px;
+}
+
+/* for image in card in doctorTeam*/
+.accordion-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-style {
+  width: max(200px, 12vw);
+  height: max(350px, 25vw);
+  border: none;
+}
+
+/* for card in Service */
+.card-service-parent-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.card-service-container {
+  width: min(250px,100vw);
+}
+
+/* align content of card-body to center in Service */
 .card-body-DichVu {
   display:flex;
   align-items: center;
   justify-content: center;
+}
+
+/* for card in News */
+.card-news-container {
+  /* height: max(230px, 15vw); */
+  width: max(200px, 12vw);
+  margin: 10px;
+}
+
+/* for fb image in Footer */
+.fb-img-container {
+  height: max(200px, 10vw);
+  width: max(400px, 20vw);
+}
+
+/* for Dang ky button in Footer */
+.button-container-footer {
+  width: 100px;
 }
 
 /* collapsing transition class */
@@ -201,19 +284,21 @@ span {
 .timelineContainer {
     position: relative;
     text-align: center;
+    margin-bottom: 10px;
+    min-width: 800px;
 }
 
 /* text over timeline classes */
 .topRowMid {
-    position: absolute;
-    top: 10%;
+  position: absolute;
+  top: 10%;
   left: 36.8%;
   right: 33%;
 }
 
 .bottomRowLeft {
-    position: absolute;
-    top: 60%;
+  position: absolute;
+  top: 60%;
   left: 8%;
   right: 66%
 }
@@ -278,10 +363,33 @@ item {
 
 /* for scrolling */
 .colScroll {
-  height: 700px;
+  height: 550px;
   overflow-y: scroll;
+  text-align: center;
 }
 
 .navbar{
   height: 50px;
+}
+
+/* for aboutUs image container*/
+.about-img-container {
+  max-width: 300px;
+  margin-bottom: 10px;
+}
+
+/* for opening hour in about page*/
+.opening-hour-container {
+  min-width: 200px;
+}
+
+/* for image in gallery in about page*/
+.gallery-img-container {
+  max-width: 300px;
+}
+
+/* for image in posts other Topics*/
+.otherTopics-img-container {
+  width: max(150px, 6vw);
+  margin-bottom: 5px;
 }

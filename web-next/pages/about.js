@@ -7,16 +7,15 @@ const About = () => {
     return (
         <Layout title="Giới thiệu phòng khám">
             <div className="row">
+                <div className="col-md-1"></div>
                 <div className="col-md-10">
                     <AboutUs />
                     <Timeline />
                     <Gallery />
                 </div>
-                <div className="col-md-2"></div>
-            </div>
-            
-        </Layout>
-        
+                <div className="col-md-1"></div>
+            </div>   
+        </Layout>   
     )
 };
 

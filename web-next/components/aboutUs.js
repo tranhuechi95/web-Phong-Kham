@@ -10,7 +10,7 @@ const AboutUs = () => {
             <div className="container-fluid m-5">
                 <div className="row">
                     <div className="col-md-4">
-                        <img className="img-fluid" src="../static/assets/template/images/hinhdv.png"/>
+                        <img className="img-fluid about-img-container" src="../static/assets/template/images/hinhdv.png"/>
                     </div>
                     <div className="col-md-1"></div>
                     <div className="col-md-6 fontSize1vw">
