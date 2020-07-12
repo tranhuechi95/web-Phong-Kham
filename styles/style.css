@@ -247,8 +247,8 @@ span {
 
 /* for fb image in Footer */
 .fb-img-container {
-  height: max(200px, 10vw);
-  width: max(400px, 20vw);
+  height: max(180px, 10vw);
+  width: max(350px, 20vw);
 }
 
 /* for Dang ky button in Footer */

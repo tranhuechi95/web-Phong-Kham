@@ -59,7 +59,7 @@ const FooterRight = () => {
     return (
         <div className="col-md-4 my-1">
             <h4 className="fontRoboBold fontSize1-5vw colorDarkBlue">FACEBOOK</h4>
-            <a href="https://tinyurl.com/phongkhambsiDao"><img className="py-3 fb-img-container" src="../static/assets/template/images/fb-Phong-Kham.jpg"/></a>
+            <a href="https://tinyurl.com/phongkhambsiDao"><img className="py-3 fb-img-container" src="../static/assets/template/images/fb-Phong-Kham-2.jpg"/></a>
         </div>
     );
 }
