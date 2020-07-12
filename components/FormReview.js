@@ -104,10 +104,8 @@ const CustomerReview = () => {
                         <div className="container text-center p-3">
                             <p className="fontSize1-2vw fontRoboReg">---NGỌC ANH---<br/>Kế toán ngân hàng</p>
                         </div>
-                        
                     </div>
                     <div className="carousel-item">
-                        
                         <div className="row text-center">
                             <div className="col">
                                 <img src="../static/assets/template/images/h2.png"/>

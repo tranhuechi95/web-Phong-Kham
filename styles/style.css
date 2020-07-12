@@ -232,6 +232,12 @@ span {
   justify-content: center;
 }
 
+/* for carousel item in Form Review */
+.carousel-item {
+  padding-top: 50px;
+  min-height: 500px;
+}
+
 /* for card in News */
 .card-news-container {
   /* height: max(230px, 15vw); */

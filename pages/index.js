@@ -15,10 +15,9 @@ const Index = () => (
             <div className="col-md-10">
                 <Nav />
                 <Banner/>
-                <Reason/>
-                <Service/>
                 <DoctorTeam/>
-                {/* <FormReview/> */}
+                <Service/>
+                <Reason/>
                 <FormReview/>
                 <News/>
             </div>
