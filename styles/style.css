@@ -209,9 +209,48 @@ span {
 }
 
 .card-style {
-  width: max(200px, 12vw);
-  height: max(350px, 25vw);
+  width: max(190px, 11vw);
   border: none;
+  margin-bottom: 5rem;
+}
+
+.doctorCard {
+  transform-style: preserve-3d;
+  transition: 0.5s transform;
+}
+
+.doctorCard.doctorCardClicked {
+  transform: rotateY(-180deg);
+}
+
+.doctorCardFront, .doctorCardBack {
+  backface-visibility: hidden; /* TODO? */
+}
+
+.doctorCardFront {
+  background-color: white;
+}
+
+.doctorCardBack {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 15px;
+  transform: rotateY(-180deg);
+  text-align: center;
+  /*overflow: scroll;*/
+  padding: 5px;
+}
+
+.doctorPartialInfo {
+  top: 60px;
+}
+
+.doctorCollapsing {
+  /* override bootstrap .collapsing class with transition 1s */
+  transition: 0.5s !important;
+}
+
+.doctorDescription {
+  margin: 10px;
 }
 
 /* for card in Service */
