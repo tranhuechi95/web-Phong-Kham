@@ -224,7 +224,7 @@ span {
 }
 
 .doctorCardFront, .doctorCardBack {
-  backface-visibility: hidden; /* TODO? */
+  -webkit-backface-visibility: hidden; /* TODO? */
 }
 
 .doctorCardFront {
