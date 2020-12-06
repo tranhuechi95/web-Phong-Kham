@@ -22,7 +22,7 @@ app.prepare().then( () => {
         // Database Name
         const dbName = 'bacsidao';
         // Create a new MongoClient
-        const mongoClient = new MongoClient(url);
+        const mongoClient = new MongoClient(url, { useUnifiedTopology: true });
 
         server.get( '*', (req, res) => {
             return handle(req,res);
