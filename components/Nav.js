@@ -46,7 +46,7 @@ const Nav = () => {
                             <a className="btn btn-success dropdown-toggle" role="button" id="dropdownNews" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TIN TỨC</a>
                             <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownNews">
                             {	posts.map(post => (
-                                <Link href="/posts/[postName]" as={`/posts/${post.postName}`} key={`post.id`}>
+                                <Link href="/posts/[postName]" as={`/posts/${post.postName}`} key={post.id}>
                                     <a className="nav-link dropdown-item fontRoboLight fontSize1vw">{post.name}</a>
                                 </Link>
                                     ))}
