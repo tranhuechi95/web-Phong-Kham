@@ -1,21 +1,23 @@
 import Layout from "../../components/Layout"
-import posts from '../../static/topic.json'
-import postContent from '../../static/normalized_data.json'
+import topics from '../../static/TopicsDefinition.json'
+import allArticles from '../../static/Articles.json'
 import Link from 'next/link'
 
 const OtherTopics = (props) => {
-    // filter from posts to get all the postName that is not the same as our current article's postName
-    const otherTopics = posts.filter(post => post.postName != props.currArticle.postName);
+    // filter from topics to get all the routeName that is not the same as our current article's routeName
+    const otherTopics = topics.filter(topic => topic.routeName != props.currArticle.topic);
     return (
         <div>
             <h3 className="fontSize1-5vw fontSansation pt-1 text-center">CÁC CHỦ ĐỀ BÀI VIẾT KHÁC</h3>
             {
                 otherTopics.map(topic => (
                     <div className="pt-1" key={topic.id}>
-                        <Link href="/posts/[postName]" as={`/posts/${topic.postName}`}> 
+                        <Link href="/topics/[topic]" as={`/topics/${topic.routeName}`}> 
                             <a>
-                                <img className="img-fluid otherTopics-img-container" src={`../../static/assets/template/images/${topic.smImage}`}/>
-                                <h5 className="colorBlue fontSize1-3vw fontRoboBold text-center">{topic.name}</h5>
+                                <div>
+                                    <img className="img-fluid otherTopics-img-container" src={`../../static/assets/template/images/${topic.smImage}`}/>
+                                </div>
+                                <h5 className="colorBlue fontSize1-3vw fontRoboBold text-center">{topic.displayName}</h5>
                             </a>
                         </Link>
                     </div>
@@ -35,8 +37,8 @@ const CurrArticleContent = (props) => {
                 <h3 className="colorDarkBlue fontRoboBold fontSize1-5vw pt-3">{props.currArticle.name}</h3>
                 <img className="img-fluid borderRect mb-4" src={`../../static/assets/template/images/${props.currArticle.image}`}/>
                 {/* <!-- short excerpt of the article--> */}
-                { paragraphs.map( paragraph => (
-                    <p className="fontRoboLight fontSize1-2vw text-justify">{paragraph}</p>
+                { paragraphs.map( (paragraph, idx) => (
+                    <p className="fontRoboLight fontSize1-2vw text-justify" key={idx}>{paragraph}</p>
                 ))}
                 <p className="fontRoboBold fontSize1vw text-right">PGS.TS.BS. Phạm Thị Bích Đào</p>    
             </div>
@@ -47,7 +49,9 @@ const CurrArticleContent = (props) => {
             <div className="container text-left">
                 {
                     relatedArticles.map(article => (
-                        <Link href="/postContent/[article]" as={`/postContent/${article.articleName}`} key={article.id}>
+                        // TODO deprecate usage of article.routeName
+                        // use '-'.join(article.name.toLowerCase().split(' ')) instead
+                        <Link href="/articles/[article]" as={`/articles/${article.routeName}`} key={article.id}>
                             <a><h4 className="colorDarkBlue fontSize1-2vw align-left fontRoboLight">{article.name}</h4></a>
                         </Link>   
                         )
@@ -58,40 +62,31 @@ const CurrArticleContent = (props) => {
     )
 }
 
-const PostContent = (props) => {
-    // we have the web name here
-    const currArticleWebName = props.currArticleWebName;
-    console.log(currArticleWebName)
-    // we get the aritcle name to display here
-    const currArticle = postContent.filter(post => post.articleName == currArticleWebName)
-    // console.log(currArticle[0].postName)
+const Article = (props) => {
+    const articleRouteName = props.articleRouteName;
+    const currArticle = allArticles.filter(article => article.routeName == articleRouteName)[0]
+    const currTopic = topics.filter(topic => topic.routeName == currArticle.topic)[0]
+    // articles under the same topic as the currently rendered article
+    const relatedArticles = allArticles.filter(article => article.topic == currArticle.topic && article.id != currArticle.id)
 
-    const currTopic = posts.filter(topic => topic.postName == currArticle[0].postName)
-    //console.log(currTopic)
-
-    const relatedArticles = postContent.filter(post => post.postName == currArticle[0].postName).filter(post => post.id != currArticle[0].id)
-    //console.log(relatedArticles)
-    //console.log(currTopic)
-
-    // how do I get the name of this post name?
     return (
-        <Layout title={currArticle[0].name}>
+        <Layout title={currArticle.name}>
             <div className="container-fluid m-3">
                 <div className="row">            
                     <div className="col-md-1"></div>
                     <div className="col-md-10">
                         <div className="row">
                             <div className="col-md-8">
-                                <Link href="/posts/[postName]" as={`/posts/${currTopic[0].postName}`}>
-                                    <a><h3 className="colorDarkBlue fontSansation fontSize1-5vw">Trang chính {currTopic[0].name}</h3></a>
+                                <Link href="/topics/[topic]" as={`/topics/${currTopic.routeName}`}>
+                                    <a><h3 className="colorDarkBlue fontSansation fontSize1-5vw">Trang chính {currTopic.name}</h3></a>
                                 </Link>
                                 {/* CurrArticleContent has className="col-md-6" */}
-                                <CurrArticleContent currArticle={currArticle[0]} relatedArticles={relatedArticles}/>
+                                <CurrArticleContent currArticle={currArticle} relatedArticles={relatedArticles}/>
                                 {/* <!-- for other topics --> */}
                                 {/* OtherTopics has className="col-md-4" */}
                             </div>
                             <div className="col-md-4 colScroll">
-                                <OtherTopics currArticle={currArticle[0]}/>
+                                <OtherTopics currArticle={currArticle}/>
                             </div>
                         </div> 
                     </div>
@@ -102,10 +97,10 @@ const PostContent = (props) => {
     );
 }
 
-PostContent.getInitialProps = ({query}) => {
+Article.getInitialProps = ({query}) => {
     return {
-        currArticleWebName: query.article
+        articleRouteName: query.article
     };
 }
 
-export default PostContent;
+export default Article;

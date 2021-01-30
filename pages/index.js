@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import Banner from "../components/Banner";
 import Reason from "../components/Reason";
 import Service from "../components/Service";
-import DoctorTeam from "../components/doctorTeam";
+import DoctorTeam from "../components/DoctorTeam";
 import FormReview from "../components/FormReview.js";
 import News from "../components/News";
 import fetch from 'isomorphic-unfetch';

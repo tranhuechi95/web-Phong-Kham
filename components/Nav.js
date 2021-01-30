@@ -1,4 +1,4 @@
-import posts from '../static/topic.json'
+import topics from '../static/TopicsDefinition.json'
 import Link from './ActiveLink'
 
 const Nav = () => {
@@ -45,9 +45,9 @@ const Nav = () => {
                         <div className="dropdown show">
                             <a className="btn btn-success dropdown-toggle" role="button" id="dropdownNews" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TIN TỨC</a>
                             <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownNews">
-                            {	posts.map(post => (
-                                <Link href="/posts/[postName]" as={`/posts/${post.postName}`} key={post.id}>
-                                    <a className="nav-link dropdown-item fontRoboLight fontSize1vw">{post.name}</a>
+                            {	topics.map(topic => (
+                                <Link href="/topics/[topic]" as={`/topics/${topic.routeName}`} key={topic.id}>
+                                    <a className="nav-link dropdown-item fontRoboLight fontSize1vw">{topic.displayName}</a>
                                 </Link>
                                     ))}
                             </div>
