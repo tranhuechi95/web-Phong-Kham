@@ -1,7 +1,7 @@
 const Reason = () => {
     return (
         <div>
-            <div className="container-fluid mt-5 text-center">    
+            <div className="container-fluid mt-5 text-center">
                 <p className="fontSansation">
                     <span className="colorGreen">VÌ SAO NÊN CHỌN </span>
                     <span className="colorBlue">CHÚNG TÔI</span>
@@ -21,7 +21,7 @@ const Reason = () => {
                             <p className="fontSize1-3vw fontRoboBold">BÁC SĨ CHUYÊN MÔN CAO</p>
                             <p className="fontSize1-3vw fontRoboLight">Đội ngũ bác sĩ giỏi chuyên môn, có nhiều năm kinh nghiệm tại bệnh viện Tai Mũi Họng TW.</p>
                         </div>
-                        
+
                     </div>
                     <div className="col-md-3 p-2">
                         <div className="card-img-container card-container">
@@ -31,7 +31,7 @@ const Reason = () => {
                             <p className="fontSize1-3vw fontRoboBold">NIỀM TIN VÀ LÝ TƯỞNG</p>
                             <p className="fontSize1-3vw fontRoboLight">Khách hàng là trọng tâm, chúng tôi luôn sẵn sàng chăm sóc bạn ân cần như chính thành viên trong gia đình.</p>
                         </div>
-                        
+
                     </div>
                     <div className="col-md-3 p-2">
                         <div className="card-img-container card-container">
@@ -41,7 +41,7 @@ const Reason = () => {
                             <p className="fontSize1-3vw fontRoboBold">TIÊU CHUẨN QUỐC TẾ</p>
                             <p className="fontSize1-3vw fontRoboLight">Phòng khám đáp ứng mọi tiêu chí về thiết kế, bố trí trang thiết bị theo tiêu chuẩn quốc tế.</p>
                         </div>
-                        
+
                     </div>
                     <div className="col-md-3 p-2">
                         <div className="card-img-container card-container">
@@ -52,7 +52,7 @@ const Reason = () => {
                             <p className="fontSize1-3vw fontRoboLight">100% chi phí của chúng tôi đều công khai minh bạch và được nhập hệ thống cẩn thận.</p>
                         </div>
                     </div>
-                    
+
                     {/* <div className="col-md-3">
                         <p className="fontSize1-2vw fontRoboBold">BÁC SĨ CHUYÊN MÔN CAO</p>
                         <p className="fontRoboLight">Đội ngũ bác sĩ giỏi chuyên môn, có nhiều năm kinh nghiệm tại bệnh viện Tai Mũi Họng TW.</p>

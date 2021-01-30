@@ -12,7 +12,7 @@ const OtherTopics = (props) => {
             {
                 otherTopics.map(topic => (
                     <div className="pt-1" key={topic.id}>
-                        <Link href="/topics/[topic]" as={`/topics/${topic.routeName}`}> 
+                        <Link href="/topics/[topic]" as={`/topics/${topic.routeName}`}>
                             <a>
                                 <div>
                                     <img className="img-fluid otherTopics-img-container" src={`../../static/assets/template/images/${topic.smImage}`}/>
@@ -40,7 +40,7 @@ const CurrArticleContent = (props) => {
                 { paragraphs.map( (paragraph, idx) => (
                     <p className="fontRoboLight fontSize1-2vw text-justify" key={idx}>{paragraph}</p>
                 ))}
-                <p className="fontRoboBold fontSize1vw text-right">PGS.TS.BS. Phạm Thị Bích Đào</p>    
+                <p className="fontRoboBold fontSize1vw text-right">PGS.TS.BS. Phạm Thị Bích Đào</p>
             </div>
 
             {/* <!-- other articles with title and short excerpt at the sides--> */}
@@ -53,7 +53,7 @@ const CurrArticleContent = (props) => {
                         // use '-'.join(article.name.toLowerCase().split(' ')) instead
                         <Link href="/articles/[article]" as={`/articles/${article.routeName}`} key={article.id}>
                             <a><h4 className="colorDarkBlue fontSize1-2vw align-left fontRoboLight">{article.name}</h4></a>
-                        </Link>   
+                        </Link>
                         )
                     )
                 }
@@ -72,7 +72,7 @@ const Article = (props) => {
     return (
         <Layout title={currArticle.name}>
             <div className="container-fluid m-3">
-                <div className="row">            
+                <div className="row">
                     <div className="col-md-1"></div>
                     <div className="col-md-10">
                         <div className="row">
@@ -88,7 +88,7 @@ const Article = (props) => {
                             <div className="col-md-4 colScroll">
                                 <OtherTopics currArticle={currArticle}/>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                     <div className="col-md-1"></div>
                 </div>

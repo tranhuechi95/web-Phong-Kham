@@ -11,7 +11,7 @@ const OtherTopics = (props) => {
             {
                 otherTopics.map(topic => (
                     <div className="pt-4" key={topic.id}>
-                        <Link href="/topics/[topic]" as={`/topics/${topic.routeName}`}> 
+                        <Link href="/topics/[topic]" as={`/topics/${topic.routeName}`}>
                             <a>
                                 <div>
                                     <img className="img-fluid otherTopics-img-container" src={`../../static/assets/template/images/${topic.smImage}`} />
@@ -44,7 +44,7 @@ const MainTopicArticles = (props) => {
                         </h3>
                     </a>
                 </Link>
-                
+
                 {/* <!-- short excerpt of the article--> */}
                 <p className="fontRoboLight fontSize1-2vw">
                     {props.mainTopicArticles[0].excerpt}
@@ -65,7 +65,7 @@ const MainTopicArticles = (props) => {
                                 <p className="fontSize1-2vw fontRoboLight">{article.excerpt}</p>
                             </div>
                         </div>
-                    </div>    
+                    </div>
                 ))
             }
         </div>
@@ -81,7 +81,7 @@ const MainTopic = props => {
     return (
         <Layout title={`Tin Tức ${mainTopic.displayName}`}>
             <div className="container-fluid m-4">
-                <div className="row">            
+                <div className="row">
                     <div className="col-md-1">
                     </div>
                     <div className="col-md-10">
@@ -90,7 +90,7 @@ const MainTopic = props => {
                                 <h3 className="colorDarkBlue fontSansation fontSize1-5vw">{mainTopic.displayName}</h3>
                                 <MainTopicArticles mainTopicArticles={mainTopicArticles}/>
                             </div>
-                            
+
                             <div className="col-md-4 colScroll">
                                 <OtherTopics topics={topics} mainTopicRouteName={mainTopicRouteName}/>
                             </div>

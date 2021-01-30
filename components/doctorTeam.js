@@ -5,8 +5,8 @@ const DoctorTeam = () => {
             <p className="fontSansation fontSize3vw">
                 <span className="colorBlue">ĐỘI NGŨ </span>
                 <span className="colorGreen">BÁC SĨ</span>
-            </p> 
-            
+            </p>
+
             <div id="accordion">
                 <div className="container-fluid text-center pb-5 accordion-container">
                     <div className="card-deck fontSize1vw">
@@ -18,21 +18,21 @@ const DoctorTeam = () => {
                                 </div>
                             </div>
                         </a>
-                        
+
                         <div id="collapse1" className="panel-collapse collapse" data-parent="#accordion">
                             <div className="card">
-                                <div className="card-body">                                
+                                <div className="card-body">
                                     <p className="card-title fontRoboBold fontSize1-5vw">Hơn 20 năm kinh nghiệm</p>
                                     <div className="card-text fontRoboLight colorGrey fontSize1-5vw">
                                         <li>1996 Nội trú Bệnh viện - chuyên ngành Tai Mũi Họng</li>
                                         <li>2011 Tiến sĩ chuyên ngành Tai Mũi Họng</li>
                                         <li>2018 Được phong hàn Phó Giáo Sư y học</li>
-                                        <li>1999 - nay, Giảng viên bộ môn TMH trường đại học Y Hà Nội - Bác sĩ khám và điều trị tại bệnh viện đại học Y Hà Nội</li>               
+                                        <li>1999 - nay, Giảng viên bộ môn TMH trường đại học Y Hà Nội - Bác sĩ khám và điều trị tại bệnh viện đại học Y Hà Nội</li>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    
+
                         <a data-toggle="collapse" href={`#collapse2`}>
                             <div className="card card-style m-0">
                                 <img className="card-img-top" src="../static/assets/template/images/dung.jpg" alt="Bác sĩ Dũng"/>
@@ -41,7 +41,7 @@ const DoctorTeam = () => {
                                 </div>
                             </div>
                         </a>
-        
+
                         <div id="collapse2" className="card-collapse collapse" data-parent="#accordion">
                             <div className="card">
                                 <div className="card-body">
@@ -49,9 +49,9 @@ const DoctorTeam = () => {
                                 </div>
                             </div>
                         </div>
-            
 
-                        
+
+
                         <a data-toggle="collapse" href={`#collapse3`}>
                             <div className="card card-style m-0">
                                 <img className="card-img-top card-img-size" src="../static/assets/template/images/linh.jpg" alt="bac si linh"/>
@@ -67,8 +67,8 @@ const DoctorTeam = () => {
                                 </div>
                             </div>
                         </div>
-                    
-                    
+
+
                         <a data-toggle="collapse" href={`#collapse4`}>
                             <div className="card card-style m-0">
                                 <img className="card-img-top card-img-size" src="../static/assets/template/images/phuong.jpg" alt="Bác sĩ Phương"/>
@@ -99,7 +99,7 @@ const DoctorTeam = () => {
                                     <h5 className="fontRoboLight colorGrey">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</h5>
                                 </div>
                             </div>
-                        </div>                   
+                        </div>
                     </div>
                 </div>
             </div>

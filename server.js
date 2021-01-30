@@ -35,7 +35,7 @@ app.prepare().then( () => {
             }
 
         });
-        
+
         server.use(bodyParser.urlencoded({ extended: true }))
         server.use(bodyParser.json())
         server.post('/DatLich', (req, res) => {

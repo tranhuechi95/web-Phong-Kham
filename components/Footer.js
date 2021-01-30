@@ -8,9 +8,9 @@ const FooterLeft = () => {
         <img className="py-2 borderRound borderWhite" src="../static/assets/template/images/logo.jpg" style={{width: "10vw"}}/>
         <h5 className="fontRoboLight fontSize1-2vw pt-1"><i className="fas fa-map-marker-alt pr-2"></i>Số 29, Ngõ 41, Phố Vũ Ngọc Phan, Quận Đống Đa, Hà Nội</h5>
         <h5 className="fontRoboLight fontSize1-2vw pt-1"><i className="fas fa-phone pr-2"></i>0912.189.853</h5>
-        <h5 className="fontRoboLight fontSize1-2vw pt-1"><i className="fas fa-envelope pr-2"></i>pktiensiphamthibichdao@gmail.com</h5>       
+        <h5 className="fontRoboLight fontSize1-2vw pt-1"><i className="fas fa-envelope pr-2"></i>pktiensiphamthibichdao@gmail.com</h5>
     </div>
-    );   
+    );
 }
 
 const FooterMiddleForm = (props) => {
@@ -20,7 +20,7 @@ const FooterMiddleForm = (props) => {
             <h5 className="fontRoboLightItalic fontSize1vw px-2">Liên hệ với chúng tôi để biết thêm chi tiết</h5>
             <form method="POST" onSubmit={props.handleSubmit}>
                 <div className="form-row px-2">
-                    <div className="form-group col-md-8">                           
+                    <div className="form-group col-md-8">
                         <input type="email" className="form-control" id="email" placeholder="Nhập email" name="email" value={props.parentState.email} onChange={props.handleChange}/>
                     </div>
                     <div className="form-group col-md-3">
@@ -52,7 +52,7 @@ const FooterMiddleFormSubmitted = () => {
                 </div>
             </div>
         </div>
-    );    
+    );
 }
 
 const FooterRight = () => {
@@ -112,10 +112,10 @@ class Footer extends Component{
                         <div className="row">
                             <FooterLeft/>
                             <FooterMiddleForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} parentState={this.state}/>
-                            <FooterRight/>        
+                            <FooterRight/>
                         </div>
                     </div>
-                    <CopyRight/>     
+                    <CopyRight/>
                 </div>
             );
         }
@@ -125,12 +125,12 @@ class Footer extends Component{
                     <div className="row">
                         <FooterLeft/>
                         <FooterMiddleFormSubmitted/>
-                        <FooterRight/>        
+                        <FooterRight/>
                     </div>
                 </div>
                 <CopyRight/>
             </div>
-        ); 
+        );
     }
 }
 

@@ -9,7 +9,7 @@ const NewsCardDeck = (props) => (
                 <a title="test"><div className="card-body card-body-DichVu">
                 <h5 className="card-text colorBlue fontSize1-5vw fontRoboBold">{topic.displayName}</h5></div>
                 </a>
-            </Link>    
+            </Link>
         </div>))
 );
 
@@ -17,30 +17,30 @@ const News = () => (
     <div id="tintuc" className="container-fluid text-center p-5">
         <h3 className="fontSansation colorDarkBlue fontSize3vw">TIN TỨC - BÀI VIẾT</h3>
         <div id="tintucCarousel" className="carousel slide pt-2" data-ride="carousel">
-            
+
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <div className="card-deck fontSize1vw">
                         <NewsCardDeck topics={topics.slice(0, 3)} />
-                    </div>    
+                    </div>
                 </div>
                 <div className="carousel-item">
                     <div className="card-deck fontSize1vw">
                         <NewsCardDeck topics={topics.slice(3, 6)} />
-                    </div>    
+                    </div>
                 </div>
                 <div className="carousel-item">
                     <div className="card-deck fontSize1vw">
                         <NewsCardDeck topics={topics.slice(6, 9)} />
-                    </div>    
+                    </div>
                 </div>
                 <div className="carousel-item">
                     <div className="card-deck fontSize1vw">
                         <NewsCardDeck topics={topics.slice(9, 12)} />
-                    </div>    
+                    </div>
                 </div>
             </div>
-        
+
             <a className="carousel-control-prev" href="#tintucCarousel" role="button" data-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="sr-only">Previous</span>
@@ -52,5 +52,5 @@ const News = () => (
         </div>
     </div>
 );
-  
+
 export default News;

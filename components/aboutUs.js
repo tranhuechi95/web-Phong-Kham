@@ -28,9 +28,9 @@ const AboutUs = () => {
                             </ul>
                         </div>
                         <p className="fontSize1-2vw fontRoboLight">Ngoài ra, phòng khám còn khám phát hiện sớm ung thư vòm, ung thư thanh quản, ung thư mũi xoang, ung thư hạ họng<br/>Tư vấn bảo dưỡng thanh quản cho những bệnh nhân sử dụng gióng nói nhiều trong công việc (ca sĩ, giáo viên,v.v).
-                        </p>    
+                        </p>
                     </div>
-                </div>       
+                </div>
             </div>
         </div>
     );

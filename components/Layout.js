@@ -12,7 +12,7 @@ const Layout = ({children, title}) => {
             { /* <!-- to fit mobile screen --> */ }
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossOrigin="anonymous"/>
-            
+
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossOrigin="anonymous"/>
 
             { /* <!-- Bootstrap Date-Picker plugin--> */ }
@@ -29,7 +29,7 @@ const Layout = ({children, title}) => {
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
             <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-            { /* <!-- Script for datepicker --> 
+            { /* <!-- Script for datepicker -->
             <script>
                 $(document).ready(function(){
                 var date_input=$('input[name="date"]'); //our date input has the name "date"
@@ -45,12 +45,12 @@ const Layout = ({children, title}) => {
             </script> */}
         </Head>
         <Nav/>
-        { children } 
+        { children }
         <Footer />
     </div>
     )
-    
-    
+
+
 
 };
 

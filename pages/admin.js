@@ -90,7 +90,7 @@ const Admin = () => {
             </article>
         );
     }
-    
+
     return (
         <Layout title="Admin">
             <div className="row">

@@ -10,7 +10,7 @@ const Nav = () => {
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            
+
             <div className="collapse navbar-collapse bgWhite" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
@@ -22,26 +22,26 @@ const Nav = () => {
                     <li className="nav-item">
                         <Link href="/about" activeClassName="active">
                             <a className="nav-link fontSize1-2vw">GIỚI THIỆU</a>
-                        </Link>  
+                        </Link>
                     </li>
                     <li className="nav-item">
                         <Link href={`/#DichVu`} activeClassName="active">
                             <a className="nav-link fontSize1-2vw">DỊCH VỤ</a>
-                        </Link>    
+                        </Link>
                     </li>
                     <li className="nav-item">
                         <Link href={`/#BacSiTeam`} activeClassName="active">
                             <a className="nav-link fontSize1-2vw">ĐỘI NGŨ BÁC SĨ</a>
-                        </Link>   
+                        </Link>
                     </li>
                     <li className="nav-item">
                         <Link href={`/#formDatLich`} activeClassName='active'>
                             <a className="nav-link fontSize1-2vw">ĐẶT LỊCH KHÁM-LIÊN HỆ</a>
-                        </Link>   
+                        </Link>
                     </li>
                 </ul>
                 <ul className="navbar-nav ml-auto">
-                    <li className="nav-item"> 
+                    <li className="nav-item">
                         <div className="dropdown show">
                             <a className="btn btn-success dropdown-toggle" role="button" id="dropdownNews" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TIN TỨC</a>
                             <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownNews">
@@ -58,12 +58,12 @@ const Nav = () => {
                     <input className="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
                     <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>--> */ }
-            </div>            
+            </div>
         </nav>
-            
+
     </div>
     )
-    
+
 };
 
 export default Nav;
