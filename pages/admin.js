@@ -53,7 +53,7 @@ const Admin = () => {
             dynamoDbClient.send(new GetItemCommand({
                 TableName: "BacSiDaoArticles",
                 Key: {
-                    "Topic": {"S": "tong-hop"},
+                    "Category": {"S": "tong-hop"},
                     "CreatedTimestamp": {"N": "1585358536"},
                 },
             }), (err, data) => {
