@@ -400,6 +400,13 @@ item {
   margin-bottom: 5px;
 }
 
+/* for edit link*/
+.mainEditLink {
+  margin: 0px;
+  padding: 20px 0 0 20px;
+  cursor: pointer;
+}
+
 /* for the small view of each article to select which one to edit*/
 .editPostsContainer {
   margin: 0 100px 0 100px;

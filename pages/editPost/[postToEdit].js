@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../../components/Layout'
-import Topics from '../../static/topic.json';
+import Topics from '../../static/topic.json'
+import Link from 'next/link'
 
 const postToEdit = ({title}) => {
     const [newTitle, setNewTitle] = useState(title);
@@ -41,6 +42,9 @@ const postToEdit = ({title}) => {
     }
     return (
         <Layout>
+            <Link href="/mainEdit" as={`/mainEdit`}>
+                <h5 className="mainEditLink colorDarkBlue">Quay về trang chỉnh sửa</h5>
+            </Link>
             <section className="editPostsContainer">
                 <div>{title}</div>
                 <form className="singleEditPostContainer">

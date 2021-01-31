@@ -16,10 +16,8 @@ const Index = () => (
             <div className="col-md-10">
                 <Nav />
                 <Link href="/mainEdit" as={`/mainEdit`}>
-                    <a title="test"><div className="card-body card-body-DichVu">
-                    <h5 className="card-text colorBlue fontSize1-5vw fontRoboBold">Edit</h5></div>
-                    </a>
-                </Link>    
+                    <h5 className="mainEditLink colorDarkBlue">Chỉnh sửa bài viết</h5>
+                </Link>
                 <Banner/>
                 <DoctorTeam/>
                 <Service/>
