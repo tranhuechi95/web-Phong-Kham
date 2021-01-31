@@ -65,12 +65,10 @@ const CurrArticleContent = ({topicRouteName, currArticleRouteName, articles}) =>
     }
 }
 
-const Article = (props) => {
+const Article = ({topicRouteName, articleRouteName}) => {
     const [loading, setLoading] = useState("initial");
     const [articles, setArticles] = useState([]);
 
-    const topicRouteName = props.topicRouteName;
-    const articleRouteName = props.articleRouteName;
     let currArticleName = "";
     if (articles.length) {
         const matched = articles.filter(article => article.RouteName === articleRouteName);
