@@ -1,11 +1,13 @@
 import { Component } from 'react';
 import 'isomorphic-fetch';
+import footerImg from '../static/assets/template/images/fb-Phong-Kham-2.jpg';
+import logo from '../static/assets/template/images/logo.jpg';
 
 const FooterLeft = () => {
     return (
     <div className="col-md-4 my-1">
         <h4 className="fontRoboBold fontSize1-5vw colorDarkBlue">PHÒNG KHÁM CHUYÊN KHOA<br/>TAI-MŨI-HỌNG</h4>
-        <img className="py-2 borderRound borderWhite" src="../static/assets/template/images/logo.jpg" style={{width: "10vw"}}/>
+        <img className="py-2 borderRound borderWhite" src={logo} style={{width: "10vw"}}/>
         <h5 className="fontRoboLight fontSize1-2vw pt-1"><i className="fas fa-map-marker-alt pr-2"></i>Số 29, Ngõ 41, Phố Vũ Ngọc Phan, Quận Đống Đa, Hà Nội</h5>
         <h5 className="fontRoboLight fontSize1-2vw pt-1"><i className="fas fa-phone pr-2"></i>0912.189.853</h5>
         <h5 className="fontRoboLight fontSize1-2vw pt-1"><i className="fas fa-envelope pr-2"></i>pktiensiphamthibichdao@gmail.com</h5>
@@ -59,7 +61,11 @@ const FooterRight = () => {
     return (
         <div className="col-md-4 my-1">
             <h4 className="fontRoboBold fontSize1-5vw colorDarkBlue">FACEBOOK</h4>
-            <a href="https://tinyurl.com/phongkhambsiDao"><img className="py-3 fb-img-container" src="../static/assets/template/images/fb-Phong-Kham-2.jpg"/></a>
+            <a href="https://tinyurl.com/phongkhambsiDao">
+                <div>
+                    <img className="py-3 fb-img-container" src={footerImg}/>
+                </div>
+            </a>
         </div>
     );
 }
