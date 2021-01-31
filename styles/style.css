@@ -399,3 +399,60 @@ item {
   width: max(150px, 6vw);
   margin-bottom: 5px;
 }
+
+/* for the small view of each article to select which one to edit*/
+.editPostsContainer {
+  margin: 0 100px 0 100px;
+  padding: 20px;
+}
+
+.editPostGroupContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.editPostGroupContainer > * {
+  margin-right: 20px;
+}
+
+.btn-link {
+  font-size: 25px;
+  text-align: center;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+}
+
+.postSmView {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+.postSmView small {
+  color: rgb(158, 157, 157);
+}
+
+.postSmView Link {
+  cursor: pointer;
+}
+
+.singleEditPostContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.singleEditPostContainer > * {
+  margin-top: 20px;
+}
+
+.singleEditPostContainer input, textarea, select {
+  padding: 10px;
+  width: 750px;
+  display: flex;
+  flex-direction: row;
+}
