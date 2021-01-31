@@ -109,6 +109,7 @@ const Article = (props) => {
                     TableName: "BacSiDaoArticles",
                     KeyConditionExpression: "Category = :category",
                     ExpressionAttributeValues: { ":category": { "S" : topicRouteName } },
+                    ScanIndexForward: false, // returned entries are sorted by sort key (CreatedTimestamp) in descending order
                 }), (err, data) => {
                     if (err) {
                         console.log(err);

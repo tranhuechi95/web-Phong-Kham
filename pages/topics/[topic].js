@@ -114,6 +114,7 @@ const MainTopic = props => {
                     TableName: "BacSiDaoArticles",
                     KeyConditionExpression: "Category = :category",
                     ExpressionAttributeValues: { ":category": { "S" : mainTopicRouteName } },
+                    ScanIndexForward: false, // returned entries are sorted by sort key (CreatedTimestamp) in descending order
                 }), (err, data) => {
                     if (err) {
                         console.log(err);
