@@ -7,6 +7,7 @@ import FormReview from "../components/FormReview.js";
 import News from "../components/News";
 import fetch from 'isomorphic-unfetch';
 import Nav from '../components/Nav';
+import Link from 'next/link';
 
 const Index = () => (
     <Layout title="Trang Chủ">
@@ -14,6 +15,11 @@ const Index = () => (
             <div className="col-md-1"></div>
             <div className="col-md-10">
                 <Nav />
+                <Link href="/mainEdit" as={`/mainEdit`}>
+                    <a title="test"><div className="card-body card-body-DichVu">
+                    <h5 className="card-text colorBlue fontSize1-5vw fontRoboBold">Edit</h5></div>
+                    </a>
+                </Link>
                 <Banner/>
                 <DoctorTeam/>
                 <Service/>
