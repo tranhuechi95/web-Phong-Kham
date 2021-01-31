@@ -5,6 +5,7 @@ import Topics from '../../static/topic.json';
 const postToEdit = ({title}) => {
     const [newTitle, setNewTitle] = useState(title);
     const [newTopic, setNewTopic] = useState("Initial Topic");
+    const [imgUrl, setImgUrl] = useState("www.test.com");
     const [newContent, setNewContent] = useState();
     const [fullArticle, setFullArticle] = useState(); // here it should be the article fetch from DB as initial state
 
@@ -16,6 +17,10 @@ const postToEdit = ({title}) => {
         setNewTopic(e.target.value);
     }
 
+    const imgUrlChangeHandler = (e) => {
+        setImgUrl(e.target.value);
+    }
+
     const contentChangeHandler = (e) => {
         setNewContent(e.target.value);
     }
@@ -24,11 +29,15 @@ const postToEdit = ({title}) => {
     const submitHandler = (e) => {
         e.preventDefault();
         let newArticle = {};
-        newArticle.title = newTitle;
-        newArticle.topic = newTopic;
-        newArticle.content = newContent;
+        newArticle.CreatedTimestamp = "2020-01-31"; // set to be the time of updated/created
+        newArticle.ArticleName = newTitle;
+        newArticle.HeadlineImage = imgUrl;
+        newArticle.Topic = newTopic;
+        newArticle.Content = newContent;
         setFullArticle(newArticle);
         console.log(newArticle);
+
+        // need to push POST logic here to push to DB
     }
     return (
         <Layout>
@@ -49,6 +58,10 @@ const postToEdit = ({title}) => {
                     </select>
                     </label>
                     <label>
+                        Ảnh minh hoạ
+                        <input value={imgUrl} placeholder="web link tới ảnh minh hoạ" onChange={imgUrlChangeHandler}></input>
+                    </label>
+                    <label>
                         Nội dung
                         <textarea placeholder="Post content" value={newContent} onChange={contentChangeHandler}></textarea>
                     </label>
@@ -67,4 +80,3 @@ postToEdit.getInitialProps = ({query}) => {
 }
 
 export default postToEdit;
-
