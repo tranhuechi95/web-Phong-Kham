@@ -2,6 +2,7 @@ import Layout from "../../../components/Layout"
 import topics from '../../../static/TopicsDefinition.json'
 import Link from 'next/link'
 import { useEffect, useState } from "react"
+import marked from 'marked'
 
 const OtherTopics = ({topicRouteName}) => {
     // filter from topics to get all the routeName that is not the same as our current article's routeName
@@ -29,19 +30,17 @@ const OtherTopics = ({topicRouteName}) => {
 
 const CurrArticleContent = ({topicRouteName, currArticleRouteName, articles}) => {
     if (articles.length) {
+        console.log(articles);
         const currArticle = articles.filter(article => article.RouteName === currArticleRouteName)[0];
         const relatedArticles = articles.filter(article => article.RouteName !== currArticleRouteName).slice(0,7);
-        const paragraphs = currArticle.Content.split("\n");
+        // const paragraphs = currArticle.Content.split("\n");
         return (
             <div>
                 <div>
                     {/* <!-- illustration image --> */}
                     <h3 className="colorDarkBlue fontRoboBold fontSize1-5vw pt-3">{currArticle.ArticleName}</h3>
                     <img className="img-fluid borderRect mb-4" src={currArticle.HeadlineImage}/>
-                    {/* <!-- short excerpt of the article--> */}
-                    { paragraphs.map( (paragraph, idx) => (
-                        <p className="fontRoboLight fontSize1-2vw text-justify" key={idx}>{paragraph}</p>
-                    ))}
+                    <article dangerouslySetInnerHTML={ { __html: marked(currArticle.Content) } } />
                     <p className="fontRoboBold fontSize1vw text-right">PGS.TS.BS. Phạm Thị Bích Đào</p>
                 </div>
 
@@ -76,6 +75,38 @@ const Article = ({topicRouteName, articleRouteName}) => {
             currArticleName = matched[0].ArticleName;
     }
     const currTopic = topics.filter(topic => topic.routeName == topicRouteName)[0]
+
+    let view = (<p>Đang tải dữ liệu ...</p>);
+    if (loading === "failed") {
+        view = (<p>Không tải được dữ liệu!</p>);
+    } else if (loading === "completed") {
+        view = (
+            <Layout title={currArticleName}>
+                <div className="container-fluid m-3">
+                    <div className="row">
+                        <div className="col-md-1"></div>
+                        <div className="col-md-10">
+                            <div className="row">
+                                <div className="col-md-8">
+                                    <Link href="/topics/[topic]" as={`/topics/${currTopic.routeName}`}>
+                                        <a><h3 className="colorDarkBlue fontSansation fontSize1-5vw">Trang chính {currTopic.displayName}</h3></a>
+                                    </Link>
+                                    {/* CurrArticleContent has className="col-md-6" */}
+                                    <CurrArticleContent topicRouteName={topicRouteName} currArticleRouteName={articleRouteName} articles={articles}/>
+                                    {/* <!-- for other topics --> */}
+                                    {/* OtherTopics has className="col-md-4" */}
+                                </div>
+                                <div className="col-md-4 colScroll">
+                                    <OtherTopics topicRouteName={topicRouteName}/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-1"></div>
+                    </div>
+                </div>
+            </Layout>
+        );
+    }
 
     useEffect(() => {
         if (loading === "initial") {
@@ -119,6 +150,7 @@ const Article = ({topicRouteName, articleRouteName}) => {
                             const schemaDateStr = schemaDate.toLocaleString('en-US', {timeZone: 'Asia/Bangkok'});
                             articleJsFormat.CreatedTimestamp = schemaDateStr;
                             articleJsFormat.ArticleName = schema.ArticleName.S;
+                            articleJsFormat.RouteName = schema.ArticleName.S.toLowerCase().split(' ').join('-');
                             articleJsFormat.HeadlineImage = schema.HeadlineImage.S;
                             articleJsFormat.Topic = schema.Category.S;
                             articleJsFormat.Excerpt = schema.Excerpt.S;
@@ -134,32 +166,7 @@ const Article = ({topicRouteName, articleRouteName}) => {
         }
     }, [])
 
-    return (
-        <Layout title={currArticleName}>
-            <div className="container-fluid m-3">
-                <div className="row">
-                    <div className="col-md-1"></div>
-                    <div className="col-md-10">
-                        <div className="row">
-                            <div className="col-md-8">
-                                <Link href="/topics/[topic]" as={`/topics/${currTopic.routeName}`}>
-                                    <a><h3 className="colorDarkBlue fontSansation fontSize1-5vw">Trang chính {currTopic.displayName}</h3></a>
-                                </Link>
-                                {/* CurrArticleContent has className="col-md-6" */}
-                                <CurrArticleContent topicRouteName={topicRouteName} currArticleRouteName={articleRouteName} articles={articles}/>
-                                {/* <!-- for other topics --> */}
-                                {/* OtherTopics has className="col-md-4" */}
-                            </div>
-                            <div className="col-md-4 colScroll">
-                                <OtherTopics topicRouteName={topicRouteName}/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-1"></div>
-                </div>
-            </div>
-        </Layout>
-    );
+    return view;
 }
 
 Article.getInitialProps = ({query}) => {

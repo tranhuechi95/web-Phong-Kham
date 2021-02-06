@@ -21,6 +21,7 @@
     "express": "^4.17.1",
     "isomorphic-fetch": "^3.0.0",
     "isomorphic-unfetch": "^3.0.0",
+    "marked": "^1.2.9",
     "mongodb": "^3.5.6",
     "next": "^10.0.3",
     "next-fonts": "^1.0.3",
