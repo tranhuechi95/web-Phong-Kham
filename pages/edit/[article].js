@@ -21,14 +21,13 @@ const postToEdit = () => {
     const router = useRouter();
     const articleRouteName = router.query["article"];
     const year = router.query["year"];
-    // console.log(router.query);
-    // console.log(`Year: ${year}`);
     const [status, setStatus] = useState("loading");
     const [newTitle, setNewTitle] = useState("");
     const [newTopic, setNewTopic] = useState("");
     const [imgUrl, setImgUrl] = useState("");
     const [newContent, setNewContent] = useState("");
     const [article, setArticle] = useState({});
+    const [allArticles, setAllArticles] = useState({});
 
     const titleChangeHandler = (e) => {
         setNewTitle(e.target.value);
@@ -100,6 +99,18 @@ const postToEdit = () => {
                 } else {
                     console.log("Submitted successfully!")
                     console.log(data.ConsumedCapacity);
+                    // update session storage with content of this new article
+                    // might be a new article
+                    let allArticlesCopy = Object.assign({}, allArticles);
+                    let singleYearArticles = allArticlesCopy[year];
+                    let article = singleYearArticles.filter(article => article.RouteName === articleRouteName)[0];
+                    article.ArticleName = newTitle;
+                    article.RouteName = article.ArticleName.toLowerCase().split(' ').join('-');
+                    article.HeadlineImage = imgUrl;
+                    article.Topic = newTopic;
+                    article.Content = newContent;
+                    article.Excerpt = newContent.slice(0,170) + "...";
+                    window.sessionStorage.setItem("AllArticles", JSON.stringify(allArticlesCopy));
                 }
             });
         });
@@ -155,7 +166,11 @@ const postToEdit = () => {
                 setStatus("new");
             } else {
                 const allArticles = JSON.parse(window.sessionStorage.getItem("AllArticles"));
+                setAllArticles(allArticles);
                 let years = Object.keys(allArticles).map(yearStr => parseInt(yearStr, 10));
+                // TODO all this painful work is because Javascript's native Datetime module
+                // does not have a way to turn an ISO-formatted datetime string into a
+                // Datetime instance. Consider using an external library.
                 for (let year of years) {
                     allArticles[year] = allArticles[year].map(article => {
                         let articleCopy = Object.assign({}, article);
@@ -184,6 +199,9 @@ const postToEdit = () => {
     return view
 }
 
+// TODO why is useRouter in React functional component able to capture the sections
+// of the link, but getInitialProps isn't? Does it have something to do with the
+// fact that I used ? syntax in the link to pass more parameters?
 // postToEdit.getInitialProps = ({query}) => {
 //     return {
 //         articleRouteName: query.article,
