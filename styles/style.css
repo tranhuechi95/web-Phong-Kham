@@ -447,16 +447,35 @@ item {
 .singleEditPostContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
 }
 
 .singleEditPostContainer > * {
   margin-top: 20px;
 }
 
+.singleEditPostContainer label {
+  font-weight: bold;
+}
+
 .singleEditPostContainer input, textarea, select {
   padding: 10px;
-  width: 750px;
+  width: 250px;
   display: flex;
   flex-direction: row;
+}
+
+.singleEditPostContainer textarea {
+  padding: 10px;
+  height: 800px;
+  width: 800px;
+}
+
+.form-button-container {
+  display: flex;
+  justify-content: center;
 }
