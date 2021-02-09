@@ -10,6 +10,7 @@ import {
     toDynamoDBSchema,
     updateExistingArticle
 } from '../../common/article/Utils';
+import marked from 'marked';
 
 // Without this configuration, withAuthenticator call below cannot work
 // TODO What is Auth? A stateful singleton? What does Amplify.configure actually execute under the hood?
@@ -23,6 +24,9 @@ const postToEdit = () => {
     const year = router.query["year"];
     const [status, setStatus] = useState("loading");
     const now = Math.floor(Date.now().valueOf() / 1000)
+    const [previewEditBtn, setPreviewEditBtn] = useState("Preview");
+    const [textareaClass, setTextareaClass] = useState("");
+    const [articleContentClass, setArticleContentClass] = useState("articleContentContainer hidden");
     const [article, setArticle] = useState({
         CreatedTimestamp: now,
         CreatedDatetime: epochToDatetime(now),
@@ -34,10 +38,39 @@ const postToEdit = () => {
         Content: "",
     });
 
-    const titleChangeHandler = (e) => { setArticle({ArticleName: e.target.value}); }
-    const topicChangeHandler = (e) => { setArticle({Topic: e.target.value}); }
-    const imgUrlChangeHandler = (e) => { setArticle({HeadlineImage: e.target.value}); }
-    const contentChangeHandler = (e) => { setArticle({Content: e.target.value}); }
+    const titleChangeHandler = (e) => {
+        let articleClone = Object.assign({}, article)
+        articleClone.ArticleName = e.target.value
+        setArticle(articleClone)
+    }
+    const topicChangeHandler = (e) => {
+        let articleClone = Object.assign({}, article)
+        articleClone.Topic = e.target.value
+        setArticle(articleClone)
+    }
+    const imgUrlChangeHandler = (e) => {
+        let articleClone = Object.assign({}, article)
+        articleClone.HeadlineImage = e.target.value
+        setArticle(articleClone)
+    }
+    const contentChangeHandler = (e) => {
+        let articleClone = Object.assign({}, article)
+        articleClone.Content = e.target.value
+        setArticle(articleClone)
+    }
+
+    const previewEditBtnHandler = (e) => {
+        e.preventDefault();
+        if (previewEditBtn == "Preview") {
+            setPreviewEditBtn("Edit");
+            setArticleContentClass("articleContentContainer");
+            setTextareaClass("hidden");
+        } else {
+            setPreviewEditBtn("Preview");
+            setArticleContentClass("articleContentContainer hidden");
+            setTextareaClass("");
+        }
+    }
 
     //testing for form content
     const submitHandler = (e) => {
@@ -101,9 +134,11 @@ const postToEdit = () => {
                             </div>
 
                             <div>
+                                <button className="btn btn-Green colorDarkBlue button-container-footer" onClick={previewEditBtnHandler}>{previewEditBtn}</button>
                                 <label>
                                     Nội dung
-                                    <textarea placeholder="Post content" value={article.Content} onChange={contentChangeHandler}></textarea>
+                                    <textarea className={textareaClass} placeholder="Post content" value={article.Content} onChange={contentChangeHandler}></textarea>
+                                    <article className={articleContentClass} dangerouslySetInnerHTML={ { __html: marked(article.Content) } } />
                                 </label>
                             </div>
                         </div>

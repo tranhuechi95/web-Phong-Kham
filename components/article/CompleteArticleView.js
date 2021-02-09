@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import ArticleContent from "./ArticleContent"
 import Layout from "../Layout"
 import OtherTopicsSidePanel from "../topic/OtherTopicsSidePanel"

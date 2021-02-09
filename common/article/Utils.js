@@ -94,10 +94,15 @@ export function fromDynamoDbSchema(schema) {
 export function updateExistingArticle(allArticlesByYear, updatedArticle) {
     const year = updatedArticle.CreatedDatetime.getFullYear()
     let singleYearArticles = allArticlesByYear[year]
-    let articleOptional = singleYearArticles.filter(article => article.CreatedTimestamp === CreatedTimestamp)
-    if (articleOptional.length) {
-        articleOptional[0] = updatedArticle
-    } else {
+    let foundMatching = false
+    for (let i = 0; i < singleYearArticles.length; ++i) {
+        if (singleYearArticles[i].CreatedTimestamp === updatedArticle.CreatedTimestamp) {
+            singleYearArticles[i] = updatedArticle
+            foundMatching = true
+            break
+        }
+    }
+    if (!foundMatching) {
         console.log(`ERR | [Update existing] No existing article has matching CreatedDatetime with updated article [${updatedArticle.CreatedDatetime}]`);
     }
 }

@@ -4,6 +4,7 @@ import topics from '../../../static/TopicsDefinition.json'
 
 import { getUnauthenticatedDynamoDbClient } from "../../../common/aws/DynamoDb"
 import CompleteArticleView from "../../../components/article/CompleteArticleView"
+import { fetchByTopic } from "../../../common/aws/FetchArticles"
 
 const ArticleView = ({topicRouteName, articleRouteName}) => {
     const [loading, setLoading] = useState("initial");

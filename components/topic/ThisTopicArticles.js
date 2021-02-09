@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function ThisTopicArticles({topicRouteName, articles}) {
     if (!articles.length) {
         return (
