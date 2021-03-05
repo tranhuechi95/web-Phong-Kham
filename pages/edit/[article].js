@@ -18,10 +18,11 @@ import Amplify, { Auth } from 'aws-amplify';
 Amplify.configure(AMPLIFY_PARAMS);
 Auth.configure();
 
-const postToEdit = () => {
+const postToEdit = (props) => {
     const router = useRouter();
     const articleRouteName = router.query["article"];
     const year = router.query["year"];
+
     const [status, setStatus] = useState("loading");
     const now = Math.floor(Date.now().valueOf() / 1000)
     const [previewEditBtn, setPreviewEditBtn] = useState("Preview");
@@ -37,6 +38,10 @@ const postToEdit = () => {
         Excerpt: "",
         Content: "",
     });
+
+    // TODO a little hacky, review later
+    const [successAlertStr, setSuccessAlertStr] = useState("alert alert-success hidden");
+    const [errorAlertStr, setErrorAlertStr] = useState("alert alert-danger hidden");
 
     const titleChangeHandler = (e) => {
         let articleClone = Object.assign({}, article)
@@ -75,31 +80,36 @@ const postToEdit = () => {
     //testing for form content
     const submitHandler = (e) => {
         e.preventDefault();
-
-        Auth.currentAuthenticatedUser().then((cognitoUser) => {
-            const { PutItemCommand } = require("@aws-sdk/client-dynamodb");
-            const dynamoDbClient = getAuthenticatedDynamoDbClient(cognitoUser);
-            dynamoDbClient.send(new PutItemCommand({
-                TableName: "BacSiDaoArticles",
-                Item: toDynamoDBSchema(article),
-                ReturnConsumedCapacity: "TOTAL",
-            }), (err, data) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log("Submitted successfully!")
-                    console.log(data.ConsumedCapacity);
-                    // update session storage with content of this new/updated article
-                    let allArticlesByYear = deserializedArticlesFromStorage();
-                    if (status === "new") {
-                        addNewArticle(allArticlesByYear, article)
-                    } else if (status === "edit") {
-                        updateExistingArticle(allArticlesByYear, article)
+        if (confirm("Xác nhận cập nhật bài viết?")) {
+            Auth.currentAuthenticatedUser().then((cognitoUser) => {
+                const { PutItemCommand } = require("@aws-sdk/client-dynamodb");
+                const dynamoDbClient = getAuthenticatedDynamoDbClient(cognitoUser);
+                dynamoDbClient.send(new PutItemCommand({
+                    TableName: "BacSiDaoArticles",
+                    Item: toDynamoDBSchema(article),
+                    ReturnConsumedCapacity: "TOTAL",
+                }), (err, data) => {
+                    if (err) {
+                        console.log(err);
+                        setSuccessAlertStr("alert alert-success hidden");
+                        setErrorAlertStr("alert alert-danger");
+                    } else {
+                        console.log("Submitted successfully!");
+                        setSuccessAlertStr("alert alert-success");
+                        setErrorAlertStr("alert alert-danger hidden");
+                        console.log(data.ConsumedCapacity);
+                        // update session storage with content of this new/updated article
+                        let allArticlesByYear = deserializedArticlesFromStorage();
+                        if (status === "new") {
+                            addNewArticle(allArticlesByYear, article)
+                        } else if (status === "edit") {
+                            updateExistingArticle(allArticlesByYear, article)
+                        }
+                        window.sessionStorage.setItem("AllArticles", JSON.stringify(allArticlesByYear));
                     }
-                    window.sessionStorage.setItem("AllArticles", JSON.stringify(allArticlesByYear));
-                }
+                });
             });
-        });
+        }
     }
 
     let view;
@@ -131,6 +141,12 @@ const postToEdit = () => {
                                     Ảnh minh hoạ
                                     <input value={article.HeadlineImage} placeholder="web link tới ảnh minh hoạ" onChange={imgUrlChangeHandler}></input>
                                 </label>
+                                <div className={successAlertStr} role="alert">
+                                    Bài viết đã được cập nhật!
+                                </div>
+                                <div className={errorAlertStr} role="alert">
+                                    Lỗi khi cập nhật bài viết ...
+                                </div>
                             </div>
 
                             <div>
@@ -177,15 +193,14 @@ const postToEdit = () => {
     return view
 }
 
-// TODO why is useRouter in React functional component able to capture the sections
-// of the link, but getInitialProps isn't? Does it have something to do with the
-// fact that I used ? syntax in the link to pass more parameters?
-// postToEdit.getInitialProps = ({query}) => {
-//     return {
-//         articleRouteName: query.article,
-//         year: query.year
-//     };
-// }
+export async function getServerSideProps(context) {
+    return {
+        props: {
+            "articleRouteName": context.query["article"],
+            "year": context.query["year"],
+        }
+    }
+}
 
 // Wrapping the postToEdit view with withAuthenticator guarantees that user has to login before content
 // of postToEdit page is rendered.

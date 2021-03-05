@@ -5,14 +5,14 @@ import logo from '../static/assets/template/images/logo.jpg'
 const Nav = () => {
     return (
     <div className="container-fluid mx-5">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <nav className="navbar navbar-expand-lg navbar-light bgGray fixed-top">
             <img src={logo} style={{width: "5vw"}}/>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-            <div className="collapse navbar-collapse bgWhite" id="navbarSupportedContent">
+            <div className="collapse navbar-collapse bgGray" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
                         <Link href="/" activeClassName="active">
@@ -35,11 +35,11 @@ const Nav = () => {
                             <a className="nav-link fontSize1-2vw">ĐỘI NGŨ BÁC SĨ</a>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <Link href={`/#formDatLich`} activeClassName='active'>
                             <a className="nav-link fontSize1-2vw">ĐẶT LỊCH KHÁM-LIÊN HỆ</a>
                         </Link>
-                    </li>
+                    </li> */}
                 </ul>
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">

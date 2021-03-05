@@ -4,7 +4,7 @@ const Gallery = () => {
             <h3 className="fontRoboBold fontSize2vw">THƯ VIỆN ẢNH</h3>
             <div id="galleryCarousel" className="carousel slide p-5" data-ride="carousel">
                 <ol className="carousel-indicators">
-                    <li data-target="#galleryCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#galleryCarousel" data-slide-to="0" className="active"></li>
                     <li data-target="#galleryCarousel" data-slide-to="1"></li>
                     <li data-target="#galleryCarousel" data-slide-to="2"></li>
                 </ol>

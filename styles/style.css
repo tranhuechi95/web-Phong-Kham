@@ -120,6 +120,10 @@ span {
   background-color: white;
 }
 
+.bgGray {
+  background-color: #e7e7e7;
+}
+
 .bgGreen {
   background-color: #43D4A1;
 }
@@ -279,6 +283,12 @@ span {
 
 .btn-Green {
   background-color: #43D4A1;
+}
+
+.btn-Green:hover {
+  background-color: white;
+  color: #0f052e;
+  border-color: #0f052e;
 }
 
 /* font awesome icon colors*/
@@ -462,7 +472,7 @@ item {
   font-weight: bold;
 }
 
-.singleEditPostContainer input, textarea, select {
+.singleEditPostContainer input, textarea, select, .alert {
   padding: 10px;
   width: 250px;
   display: flex;
