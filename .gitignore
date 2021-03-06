@@ -1,4 +1,7 @@
 node_modules/
 .next/
-deploy.zip
-data/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+.ebextensions

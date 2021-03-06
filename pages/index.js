@@ -5,9 +5,7 @@ import Service from "../components/Service";
 import DoctorTeam from "../components/DoctorTeam";
 import FormReview from "../components/FormReview.js";
 import News from "../components/News";
-import fetch from 'isomorphic-unfetch';
 import Nav from '../components/Nav';
-import Link from 'next/link';
 
 const Index = () => (
     <Layout title="Trang Chủ">

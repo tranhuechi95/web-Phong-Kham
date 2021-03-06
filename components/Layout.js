@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Nav from './Nav';
-import '../styles/style.css';
 import Footer from './Footer';
 
 const Layout = ({children, title}) => {
