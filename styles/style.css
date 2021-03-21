@@ -151,7 +151,7 @@ span {
 
 /* border-type class */
 .borderRound {
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .borderLightRound {
@@ -285,8 +285,8 @@ span {
 
 /* for carousel item in Form Review */
 .carousel-item {
-  padding-top: 50px;
-  min-height: 500px;
+  padding-top: 20px;
+  /* min-height: 500px; */
 }
 
 /* for card in News */
@@ -338,10 +338,6 @@ span {
   border-color: #0f052e;
 }
 
-/* font awesome icon colors*/
-.fas {
-    color: #43D4A1 !important;
-}
 
 /* container for timeline */
 .timelineContainer {
@@ -447,8 +443,13 @@ item {
 }
 
 /* for image in gallery in about page*/
-.gallery-img-container {
+.gallery-carousel {
+  height: 250px;
+}
+
+.gallery-img {
   max-width: 300px;
+  height: auto;
 }
 
 /* for image in posts other Topics*/
@@ -549,4 +550,10 @@ item {
 .form-button-container {
   display: flex;
   justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .gallery-carousel {
+    height: 100%;
+  }
 }

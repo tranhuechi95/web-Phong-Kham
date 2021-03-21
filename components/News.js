@@ -14,7 +14,7 @@ const NewsCardDeck = (props) => (
 );
 
 const News = () => (
-    <div id="tintuc" className="container-fluid text-center p-5">
+    <div id="tintuc" className="container-fluid bgGreen text-center p-5">
         <h3 className="fontSansation colorDarkBlue fontSize3vw">TIN TỨC - BÀI VIẾT</h3>
         <div id="tintucCarousel" className="carousel slide pt-2" data-ride="carousel">
 
@@ -42,11 +42,11 @@ const News = () => (
             </div>
 
             <a className="carousel-control-prev" href="#tintucCarousel" role="button" data-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="fas fa-arrow-alt-circle-left fa-2x colorDarkBlue" aria-hidden="true"></span>
                 <span className="sr-only">Previous</span>
             </a>
             <a className="carousel-control-next" href="#tintucCarousel" role="button" data-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="fas fa-arrow-alt-circle-right fa-2x colorDarkBlue" aria-hidden="true"></span>
                 <span className="sr-only">Next</span>
             </a>
         </div>
