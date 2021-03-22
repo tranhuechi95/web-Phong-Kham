@@ -56,7 +56,8 @@ const TopicView = ({topicRouteName}) => {
 
 TopicView.getInitialProps = ({query}) => {
     return {
-        topicRouteName: query.topic
+        key: query.topic,
+        topicRouteName: query.topic,
     };
 }
 

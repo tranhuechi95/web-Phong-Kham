@@ -36,6 +36,7 @@ const ArticleView = ({topicRouteName, articleRouteName}) => {
 
 ArticleView.getInitialProps = ({query}) => {
     return {
+        key: query.topic + '::' + query.article,
         topicRouteName: query.topic,
         articleRouteName: query.article
     };
