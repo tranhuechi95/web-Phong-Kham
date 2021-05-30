@@ -20,9 +20,17 @@ This step was trivial for the first version of this website, but was totally non
 
 Some new stuff I learnt in the process:
 
-1. Authentication and authorization are 2 different things! (to elaborate ...)
+1. Using AWS DynamoDB and its Javascript client library
 
-2.
+* Design
+
+* Cost-related issues and my solution
+
+2. Using AWS Cognito and its Javascript client library - Amplify
+
+* Cognito user pools and identity pools.
+
+* Creating app client(s) and use them for dev testing/production.
 
 ### Installing EB CLI
 
@@ -47,6 +55,24 @@ you can now type
 
 ### Create an Elastic Beanstalk (EB) environment
 
+Please type
+
+        eb create --single
+
+instead of
+
+        eb create
+
+if you're a cheapo like me and prefer to avoid using the ELB to save money. The command will ask you a few self-explanatory questions; just answer them. After that, voila, your environment is up and running, assuming your code is correct and configuration is correct. To check the health of your environment, go to EB management console on AWS website, or type
+
+        eb status
+
+If deployment fails, `eb create` will notify you about it. You could check why by SSH-ing into your instance
+
+        ssh -i /path/to/your/key ec2-user@public-dns-of-ec2-instance-that-your-environment-create
+
+[This document](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) contains a guide on how to generate a SSH key pair for your EC2 instance. To know the DNS of the EC2 instance that your environment created, go to EC2 management console on AWS website and look around.
+
 ### Deploy website to that EB environment
 
 Things I learnt:
@@ -63,14 +89,41 @@ Things I learnt:
 
     I followed the steps [here](https://medium.com/swlh/how-to-deploy-your-nextjs-project-on-elastic-beanstalk-in-5-minutes-7f6bbd8b05be) - this article was incredibly useful! One small thing I would add is to use `eb create --single` to create an EB environment to prevent it from spinning up an elastic load balancer (ELB), as ELB costs money.
 
+3. Need to add an inbound rule for the EC2 instance that's running your webserver to allow HTTP traffic (port 80)
+
+    * Select "Security Groups" on the vertical menu on the left of your EC2 management console.
+    * Select your instance by clicking on the checkbox next to it. A box with more details of the instance's security group will pop up from below.
+    * Go to "Inbound rules" section and select "Edit inbound rules".
+    * Add a rule that allows HTTP traffic from any IP address (0.0.0.0/0). AWS seems to discourage specifying "any IP address" and claim that the best practice is specifying a range of IP addresses that can fetch pages from your web server. I'm not sure how to do this yet - is there a range of IP addresses that could match all those from Viet Nam and Singapore?
+
 ### Add TLS certificate to your website
 
 If you've purchased and configured a custom domain name for your EB env, you can use HTTPS to allow users to connect to your web site securely. If you don't own a domain name, you can still use HTTPS with a self-signed certificate for development and testing purposes. HTTPS is a must for any application that transmits user data or login information.
 
-You can place configuration files under `.ebextensions` folder to configure the proxy server that passes traffic to your application to terminate HTTPS connection. This is useful if you want to use HTTPS with a single instance environment, or if you configure your load balancer to pass traffic through without decrypting it.
+EB uses nginx (default) or Apache HTTPD as the reverse proxy to map your application to your ELB load balancer on port 80. EB provides a default proxy configuration that you can either extend or override completely with your own configuration. You can place configuration files under `.ebextensions` folder to configure the proxy server that passes traffic to your application to terminate HTTPS connection. This is useful if you want to use HTTPS with a single instance environment, or if you configure your load balancer to pass traffic through without decrypting it. However, if your application uses Amazon Linux 2, configuration files are expected to be placed under `.platform/nginx/` instead and all files under `.ebextensions` will be ignored ([source](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-linux-extend.html), "Reverse proxy configuration" section). EB also requires the `.platform/nginx` folder to have a very specific structure that mirrors the `/etc/nginx/` on your EC2 instance. I only understand the reason behind this after I SSH-ed into my EC2 instance:
 
-EB uses nginx (default) or Apache HTTPD as the reverse proxy to map your application to your ELB load balancer on port 80. EB provides a default proxy configuration that you can either extend or override completely with your own configuration.
+1. Upon deployment, EB takes the content of `.platform/nginx` and copy them to `/var/proxy/staging/nginx`, overwriting files with the same relative path with our files. E.g. if you have a file called `.platform/nginx/conf.d/00_application.conf`, that file will overwrite the file `/var/proxy/staging/nginx/conf.d/00_application.conf` on your EC2 instance if it exists.
+
+2. EB then asks nginx to test if the files under `/var/proxy/staging/nginx` looks like a valid configuration. Essentially nginx just need to test 1 file, `/var/proxy/staging/nginx/nginx.conf` since all the files under `/var/proxy/staging/nginx` just get concatenated into that file using nginx `include` directive. Specifically the command EB uses is
+
+        /bin/sh -c /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
+
+If this test fails, the running nginx instance won't be restarted with the new configuration. I figured this out by reading `/var/log/eb-engine.log` (which is a much better experience than calling `eb log` from your computer by the way).
+
+3. If the nginx configuration we provide is valid, EB will copy them to `/etc/nginx/` (a.k.a. production configuration folder) and restart nginx.
+
+To understand what to put under your `.platform/nginx` folder, I suggest you look at the `include` statements inside `/var/proxy/staging/nginx/nginx.conf` closely and think about what you need to achieve. For me, I need to add 2 HTTPS proxy servers that listen on port 443, and tell the default HTTP server to redirect all requests to one of the HTTPS server. To achieve the 1st point, I use `.platform/nginx/conf.d/https.conf`. To achieve the 2nd point, I use `.platform/nginx/conf.d/elasticbeanstalk/https.conf`.
 
 By default, EB configures the proxy to forward requests to your application on port 8080. You can override the default port by setting the `PORT` environment property to the port on which your main application listens. Another way to do this is to set your application's port to `PORT` e.g. putting `next start -p $PORT` as your `start` script inside `package.json`.
 
+A nginx server that serves HTTPS requests need to have a "certificate" and a "private key". You can generate them using [Let's Encrypt Certbot](https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/). A tutorial with instructions specific to Amazon Linux 2 platform can be found [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#letsencrypt). After their successful generation, you need to do 2 things:
+
+1. Add them to your nginx HTTPS server configuration.
+
+2. Set up a cron job to automatically renew your certificate and private key when they expire. By default, the certificate and key expires after 90 days. The tutorial with Amazon Linux 2 instructions provides guidance on how to do this.
+
 Sample config file for nginx proxy server of a NodeJS app could be found [here](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/https-singleinstance-nodejs.html). We'll then need to generate our server's certificate and private key. An X509 certificate for our application could be created with OpenSSL. We only need to create a certificate locally (can sign it ourselves using our own private key instead of having to submit the signing request to a third party for signing) if we want to use HTTPS in a single instance env.
+
+### Problem with AWS Amplify library
+
+After my website is deployed with HTTPS, I tried going to the URL that requires authentication and authorization and saw [an error](https://github.com/aws-amplify/amplify-js/discussions/5836) on my Javascript console. Luckily someone in the discussion thread has [the solution I need](https://github.com/aws-amplify/amplify-js/discussions/5836#discussioncomment-47721) (I ignored the last step because I got it correct during my dev testing). I suspect this is because there is an inconsistency between the version of Amplify I used when I develop the app and the version AWS currently supports. It's a relief the fix is that easy.
