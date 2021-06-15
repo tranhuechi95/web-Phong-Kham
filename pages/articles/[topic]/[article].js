@@ -38,7 +38,9 @@ ArticleView.getInitialProps = ({query}) => {
     return {
         key: query.topic + '::' + query.article,
         topicRouteName: query.topic,
-        articleRouteName: query.article
+        // This will be used to matched against RouteName attribute of every article instance stored inside the browser's
+        // session storage, which is encoded. Hence, this also needs to be encoded.
+        articleRouteName: encodeURIComponent(query.article)
     };
 }
 

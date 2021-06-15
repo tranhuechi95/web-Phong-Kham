@@ -7,8 +7,6 @@ export default function ThisTopicArticles({topicRouteName, articles}) {
         )
     } else {
         const otherArticles = articles.slice(1);
-        // TODO deprecate usage of article.routeName
-        // use article.name.toLowerCase().split(' ').join('-') instead
         return (
             <div>
                 <div>

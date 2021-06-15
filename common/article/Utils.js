@@ -77,7 +77,14 @@ export function fromDynamoDbSchema(schema) {
         CreatedTimestamp: schema.CreatedTimestamp.N,
         CreatedDatetime: epochToDatetime(schema.CreatedTimestamp.N),
         ArticleName: schema.ArticleName.S,
-        RouteName: schema.ArticleName.S.toLowerCase().split(' ').join('-'),
+        // To form route name, article name is splited by spaces and joined with - to make the encoded url more
+        // readable since the article names this application deals with contain a lot of space characters.
+        //
+        // Remark: encodeURIComponent does not encode ' character. Some web applications might suffer an injection
+        // bug because of this e.g. some that use query strings to create HTML attributes such as href='MyQueryParam'.
+        // For these applications, ' can be further encoded as %27. Since this web application only uses the query param
+        // to query a matching article instance, this extra layer of encoding is not needed.
+        RouteName: encodeURIComponent(schema.ArticleName.S.toLowerCase().split(' ').join('-')),
         HeadlineImage: schema.HeadlineImage.S,
         Topic: schema.Category.S,
         Excerpt: schema.Excerpt.S,

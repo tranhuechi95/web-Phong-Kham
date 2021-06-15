@@ -20,7 +20,9 @@ Auth.configure();
 
 const postToEdit = (props) => {
     const router = useRouter();
-    const articleRouteName = router.query["article"];
+    // This will be used to matched against RouteName attribute of every article instance stored inside the
+    // browser's session storage, which is encoded. Hence, this also needs to be encoded.
+    const articleRouteName = encodeURIComponent(router.query["article"]);
     const year = router.query["year"];
 
     const [status, setStatus] = useState("loading");
@@ -196,7 +198,9 @@ const postToEdit = (props) => {
 export async function getServerSideProps(context) {
     return {
         props: {
-            "articleRouteName": context.query["article"],
+            // This will be used to matched against RouteName attribute of every article instance stored inside the
+            // browser's session storage, which is encoded. Hence, this also needs to be encoded.
+            "articleRouteName": encodeURIComponent(context.query["article"]),
             "year": context.query["year"],
         }
     }
