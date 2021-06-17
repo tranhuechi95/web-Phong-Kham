@@ -96,6 +96,10 @@ Things I learnt:
     * Go to "Inbound rules" section and select "Edit inbound rules".
     * Add a rule that allows HTTP traffic from any IP address (0.0.0.0/0). AWS seems to discourage specifying "any IP address" and claim that the best practice is specifying a range of IP addresses that can fetch pages from your web server. I'm not sure how to do this yet - is there a range of IP addresses that could match all those from Viet Nam and Singapore?
 
+4. If the existing EC2 instance goes down and a different EC2 instance comes up, you'll highly likely need to re-generate the SSL/TLS cert files before you can successfully deploy your application.
+
+5. To monitor the deployment process, SSH into the EC2 instance and tail the log file at `/var/log/eb-engine.log`
+
 ### Add TLS certificate to your website
 
 If you've purchased and configured a custom domain name for your EB env, you can use HTTPS to allow users to connect to your web site securely. If you don't own a domain name, you can still use HTTPS with a self-signed certificate for development and testing purposes. HTTPS is a must for any application that transmits user data or login information.
@@ -127,3 +131,66 @@ Sample config file for nginx proxy server of a NodeJS app could be found [here](
 ### Problem with AWS Amplify library
 
 After my website is deployed with HTTPS, I tried going to the URL that requires authentication and authorization and saw [an error](https://github.com/aws-amplify/amplify-js/discussions/5836) on my Javascript console. Luckily someone in the discussion thread has [the solution I need](https://github.com/aws-amplify/amplify-js/discussions/5836#discussioncomment-47721) (I ignored the last step because I got it correct during my dev testing). I suspect this is because there is an inconsistency between the version of Amplify I used when I develop the app and the version AWS currently supports. It's a relief the fix is that easy.
+
+## Errors I encountered
+
+### Cannot SSH into EC2 instance
+
+I'm not sure under what condition this error arises; perhaps after the EC2 instance in my EB environment crashed and a new EC2 instance came up:
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:5qJB+pSwejZN8qyj/cFFm5TKw2KbFdrkmz8+ooz7RAQ.
+Please contact your system administrator.
+Add correct host key in /Users/leminhphuc/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /Users/leminhphuc/.ssh/known_hosts:6
+ECDSA host key for ec2-18-140-142-180.ap-southeast-1.compute.amazonaws.com has changed and you have requested strict checking.
+Host key verification failed.
+```
+
+I thought someone was really eavesdropping on me, but it turns out the host key inside `~/.ssh/known_hosts` simply got outdated. Simply removing that outdated entry fixes this problem.
+
+### Missing of SSL cert files after an instance crashes/shuts down and a new instance comes up
+
+The instance in my EB environment shut down likely because I updated the Node platform version via the EB management console. OR it could have been because I deployed the app without building it first and the heavy load from running `npm run build` was too much for the EC2 instance. I don't really know.
+
+What I know is true is that I have to regenerate all these cert files, which is a pain. Follow the instruction [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#letsencrypt), and remember to use (`bacsidao.tmh` and `www.bacsidao.tmh`) instead of (`example.com` and `www.example.com`). A note though: `certbot` requires a running Apache web server process, but Apache web server can't be readily started on EC2 instance because the `/etc/httpd/conf.modules.d/00-mpm.conf` file was missing. I had to manually add it like this:
+```
+# Select the MPM module which should be used by uncommenting exactly
+# one of the following LoadModule lines.
+
+# prefork MPM: Implements a non-threaded, pre-forking web server
+# See: http://httpd.apache.org/docs/2.4/mod/prefork.html
+#
+# NOTE: If enabling prefork, the httpd_graceful_shutdown SELinux
+# boolean should be enabled, to allow graceful stop/shutdown.
+#
+LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+
+# worker MPM: Multi-Processing Module implementing a hybrid
+# multi-threaded multi-process web server
+# See: http://httpd.apache.org/docs/2.4/mod/worker.html
+#
+#LoadModule mpm_worker_module modules/mod_mpm_worker.so
+
+# event MPM: A variant of the worker MPM with the goal of consuming
+# threads only for connections with active processing
+# See: http://httpd.apache.org/docs/2.4/mod/event.html
+#
+#LoadModule mpm_event_module modules/mod_mpm_event.so
+```
+
+### The same EC2 instance cannot run both Apache and Nginx servers at the same time
+
+Apache web server was running because `certbot` needs it to generate certificates. To check if Apache web server is running, type
+
+        sudo systemctl status httpd
+
+To turn off Apache web server, type
+
+        sudo systemctl stop httpd
