@@ -16,7 +16,7 @@ const FormToFill = (props) => {
                     </select>
                 </div>
             </div>
-            
+
             <h4 className="fontRoboBold fontSize1-5vw">THÔNG TIN ĐĂNG KÝ</h4>
             <div className="form-row">
                 <div className="form-group col-md-5">
@@ -29,7 +29,7 @@ const FormToFill = (props) => {
                     <input type="email" className="form-control" id="email" placeholder="Điền email" name="email" required="required" value={props.parentState.email} onChange={props.handleChange}/>
                 </div>
             </div>
-            
+
             <div className="form-row">
                 <div className="form-group col-md-4">
                     <label className="fontRoboLightItalic fontSize1-2vw">Số điện thoại*</label>
@@ -41,12 +41,12 @@ const FormToFill = (props) => {
                     <input type="date" className="form-control" id="ngaySinh" placeholder="DD/MM/YYYY" name="ngaySinh" value={props.parentState.ngaySinh} onChange={props.handleChange}/>
                 </div>
             </div>
-            
+
             <div className="form-group">
                 <label className="fontRoboLightItalic fontSize1-2vw">Địa chỉ</label>
                 <input type="text" className="form-control" id="address" placeholder="Điền địa chỉ" name="address" value={props.parentState.address} onChange={props.handleChange}/>
             </div>
-            
+
             <h4 className="fontRoboBold fontSize1-5vw">CHỌN LỊCH KHÁM</h4>
             <div className="form-row">
                 <div className="form-group col-md-4">
@@ -55,7 +55,7 @@ const FormToFill = (props) => {
                 </div>
                 <div className="col-md-3"></div>
                 <div className="form-group col-md-5">
-                    <label className="fontRoboLightItalic fontSize1-2vw">Giờ khám*</label>                           
+                    <label className="fontRoboLightItalic fontSize1-2vw">Giờ khám*</label>
                     <select className="form-control" id="gioKham" name="chonGioKham" required="required" value={props.parentState.chonGioKham} onChange={props.handleChange}>
                         <option>T2-T6 17:00-18:30</option>
                         <option>T2-T6 18:30-20:00</option>
@@ -65,16 +65,16 @@ const FormToFill = (props) => {
                         <option>T7 19:00-20:00</option>
                         <option>CN 15:00-16:30</option>
                         <option>CN 16:30-18:00</option>
-                        <option>CN 18:00-20:00</option>                           
+                        <option>CN 18:00-20:00</option>
                     </select>
                 </div>
-            </div>                    
-            
+            </div>
+
             <div className="form-group pt-3">
                 <button name="submit" type="submit" className="btn bgGreen fontRoboBold fontSize1-5vw">ĐẶT LỊCH KHÁM</button>
             </div>
         </form>
-    )  
+    )
 }
 
 const CustomerReview = () => {
@@ -89,7 +89,7 @@ const CustomerReview = () => {
                     <li data-target="#carouselExampleControls" data-slide-to="1"></li>
                     <li data-target="#carouselExampleControls" data-slide-to="2"></li>
                 </ol>--> */}
-        
+
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <div className="row text-center">
@@ -97,7 +97,7 @@ const CustomerReview = () => {
                                 <img src="../static/assets/template/images/review1.png"/>
                             </div>
                         </div>
-                        <br/>    
+                        <br/>
                         <div className="row text-center">
                             <p className="fontSize1-2vw fontRoboReg px-3">"Tôi bị viêm xoang từ lâu, bên trong mũi nhiều mủ và đau âm ỉ rất khó chịu. Sau khi đến phòng khám, được bác sĩ chẩn đoán sử dụng máy nội soi và tận tình chữa bệnh thì nay đã hết viêm xoang. Cám ơn bác sĩ Đào và phòng khám!"</p>
                         </div>
@@ -111,7 +111,7 @@ const CustomerReview = () => {
                                 <img src="../static/assets/template/images/h2.png"/>
                             </div>
                         </div>
-                        <br/>    
+                        <br/>
                         <div className="row text-center px-3">
                             <p className="fontSize1-2vw fontRoboReg">"Mình đến khám 1 lần thôi là khỏi luôn chứng đau họng dài ngày, mà chỉ cần dùng ít thuốc! Khỏi bệnh <br/>rất nhanh, quy trình khám đơn giản 👍🏿"</p>
                         </div>
@@ -125,7 +125,7 @@ const CustomerReview = () => {
                                 <img src="../static/assets/template/images/h3.png"/>
                             </div>
                         </div>
-                        <br/>    
+                        <br/>
                         <div className="row text-center px-3">
                             <p className="fontSize1-2vw fontRoboReg">"Bác sĩ nhẹ nhàng, chuyên khoa rất tốt điều trị bệnh dứt điểm"</p>
                         </div>
@@ -134,7 +134,7 @@ const CustomerReview = () => {
                         </div>
                     </div>
                 </div>
-                
+
                 <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="sr-only">Previous</span>
@@ -144,7 +144,7 @@ const CustomerReview = () => {
                     <span className="sr-only">Next</span>
                 </a>
             </div>
-        </div>  
+        </div>
     )
 }
 
@@ -191,7 +191,7 @@ class FormReview extends Component{
         .then(response => {
             const ourResponse = response.text();
             console.log("response received" + ourResponse);
-            return ourResponse;   
+            return ourResponse;
         })
         .then(resultText => {
             console.log("Changing the isSubmitting state " + resultText);
@@ -213,8 +213,8 @@ class FormReview extends Component{
                         <div className="col-md-5 bgGreen p-3">
                             <CustomerReview/>
                         </div>
-                        <div className="col-md-1 bgDarkBlue">             
-                        </div>   
+                        <div className="col-md-1 bgDarkBlue">
+                        </div>
                     </div>
                 </div>
             )
@@ -229,12 +229,12 @@ class FormReview extends Component{
                     <div className="col-md-5 bgGreen p-3">
                         <CustomerReview/>
                     </div>
-                    <div className="col-md-1 bgDarkBlue">             
-                    </div>   
+                    <div className="col-md-1 bgDarkBlue">
+                    </div>
                 </div>
             </div>
-        )  
-        
+        )
+
     }
 }
 

@@ -120,6 +120,10 @@ span {
   background-color: white;
 }
 
+.bgGray {
+  background-color: #e7e7e7;
+}
+
 .bgGreen {
   background-color: #43D4A1;
 }
@@ -147,7 +151,7 @@ span {
 
 /* border-type class */
 .borderRound {
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .borderLightRound {
@@ -208,10 +212,57 @@ span {
   justify-content: center;
 }
 
-.card-style {
-  width: max(200px, 12vw);
-  height: max(350px, 25vw);
+.doctorCardStyle {
+  width: max(190px, 11vw);
   border: none;
+  margin-bottom: 2rem;
+}
+
+.doctorCardText {
+  color: #1a3778;
+  font-size: 1rem;
+  font-family: RoboBold;
+  margin-bottom: 2rem;
+}
+
+.doctorCard {
+  transform-style: preserve-3d;
+  transition: 0.5s transform;
+  cursor: pointer;
+}
+
+.doctorCard.doctorCardClicked {
+  transform: rotateY(-180deg);
+}
+
+.doctorCardFront, .doctorCardBack {
+  -webkit-backface-visibility: hidden;
+}
+
+.doctorCardFront {
+  background-color: white;
+}
+
+.doctorCardBack {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 15px;
+  transform: rotateY(-180deg);
+  text-align: center;
+  /*overflow: scroll;*/
+  padding: 5px;
+}
+
+.doctorPartialInfo {
+  top: 60px;
+}
+
+.doctorCollapsing {
+  /* override bootstrap .collapsing class with transition 1s */
+  transition: 0.5s !important;
+}
+
+.doctorDescription {
+  margin: 10px;
 }
 
 /* for card in Service */
@@ -234,8 +285,8 @@ span {
 
 /* for carousel item in Form Review */
 .carousel-item {
-  padding-top: 50px;
-  min-height: 500px;
+  padding-top: 20px;
+  /* min-height: 500px; */
 }
 
 /* for card in News */
@@ -281,10 +332,12 @@ span {
   background-color: #43D4A1;
 }
 
-/* font awesome icon colors*/
-.fas {
-    color: #43D4A1 !important;
+.btn-Green:hover {
+  background-color: white;
+  color: #0f052e;
+  border-color: #0f052e;
 }
+
 
 /* container for timeline */
 .timelineContainer {
@@ -326,8 +379,8 @@ span {
 
 /* flex class */
 item {
-  flex: 1 1 0px; 
-} 
+  flex: 1 1 0px;
+}
 
 /* horizontal and vertical lines for baivietTemplate.html*/
 .vl {
@@ -390,12 +443,117 @@ item {
 }
 
 /* for image in gallery in about page*/
-.gallery-img-container {
+.gallery-carousel {
+  height: 250px;
+}
+
+.gallery-img {
   max-width: 300px;
+  height: auto;
 }
 
 /* for image in posts other Topics*/
 .otherTopics-img-container {
   width: max(150px, 6vw);
   margin-bottom: 5px;
+}
+
+/* for the small view of each article to select which one to edit*/
+.editPostsContainer {
+  margin: 0 100px 0 100px;
+  padding: 20px;
+}
+
+.editPostGroupContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.editPostGroupContainer > * {
+  margin-right: 20px;
+}
+
+.btn-link {
+  font-size: 25px;
+  text-align: center;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+}
+
+.postSmView {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+.postSmView small {
+  color: rgb(158, 157, 157);
+}
+
+.postSmView Link {
+  cursor: pointer;
+}
+
+.postSmView ul {
+  padding: 0;
+}
+
+.singleEditPostContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.singleEditPostContainer > * {
+  margin-top: 20px;
+}
+
+.singleEditPostContainer label {
+  font-weight: bold;
+}
+
+.singleEditPostContainer input, textarea, select, .alert {
+  padding: 10px;
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+}
+
+.singleEditPostContainer textarea {
+  padding: 10px;
+  height: 800px;
+  width: 800px;
+}
+
+.singleEditPostContainer label {
+  margin-top: 10px;
+}
+
+.articleContentContainer {
+  font-weight: normal;
+  text-align: justify;
+  padding: 10px;
+  width: 800px;
+}
+.hidden {
+  display: none;
+}
+
+.form-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .gallery-carousel {
+    height: 100%;
+  }
 }

@@ -5,10 +5,10 @@ const Service = () => {
                 <p className="fontSansation">
                     <span className="colorBlue">DỊCH VỤ TẠI </span>
                     <span className="colorWhite">PHÒNG KHÁM</span>
-                </p> 
+                </p>
                 <style jsx> {
                     `p {font-size: max(25px, 3vw) }`
-                }    
+                }
                 </style>
                 <div className="container-fluid text-center px-3 pt-3 pb-5">
                     <div className="card-deck fontSize1vw">
@@ -43,7 +43,7 @@ const Service = () => {
                             </div>
                         </div> */}
                     </div>
-                </div>   
+                </div>
             </div>
 
         </div>

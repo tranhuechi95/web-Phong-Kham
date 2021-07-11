@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import AboutUs from "../components/aboutUs";
+import AboutUs from "../components/AboutUs";
 import Timeline from "../components/Timeline";
 import Gallery from "../components/Gallery";
 
@@ -14,8 +14,8 @@ const About = () => {
                     <Gallery />
                 </div>
                 <div className="col-md-1"></div>
-            </div>   
-        </Layout>   
+            </div>
+        </Layout>
     )
 };
 
