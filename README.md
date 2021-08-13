@@ -75,6 +75,13 @@ If deployment fails, `eb create` will notify you about it. You could check why b
 
 ### Deploy website to that EB environment
 
+Please type
+
+        npm run build
+        eb deploy
+
+Now cross your fingers and pray you won't have to debug potential errors.
+
 Things I learnt:
 
 1. Build the application locally and deploy the built app. This offers 2 advantages:
