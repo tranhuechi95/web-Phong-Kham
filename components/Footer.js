@@ -34,7 +34,7 @@ const FooterMiddleForm = (props) => {
             <div className="fontRoboLight fontSize1-2vw">
                 <div className="d-flex">
                     <div className="flex-md-fill">Thứ Hai - Thứ Sáu<br/>Thứ Bảy<br/>Chủ Nhật<br/>Khám tại nhà theo lịch đặt trước</div>
-                    <div className="flex-md-fill">17:00-20:00<br/>16:00-20:00<br/>15:00-20:00</div>
+                    <div className="flex-md-fill">17h00 - 20h00<br/>08h30 - 11h00, 16h00 - 20h00<br/>08h30 - 11h00, 15h00 - 20h00</div>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@ const FooterMiddleFormSubmitted = () => {
             <div className="fontRoboLight fontSize1-2vw">
                 <div className="d-flex">
                     <div className="flex-md-fill">Thứ Hai - Thứ Sáu<br/>Thứ Bảy<br/>Chủ Nhật<br/>Khám tại nhà theo lịch đặt trước</div>
-                    <div className="flex-md-fill">17:00-20:00<br/>16:00-20:00<br/>15:00-20:00</div>
+                    <div className="flex-md-fill">17h00 - 20h00<br/>08h30 - 11h00, 16h00 - 20h00<br/>08h30 - 11h00, 15h00 - 20h00</div>
                 </div>
             </div>
         </div>

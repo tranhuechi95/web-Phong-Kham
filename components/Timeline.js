@@ -15,7 +15,7 @@ const Timeline = () => {
                         <h3 className="fontRoboBold fontSize2vw">THỜI GIAN LÀM VIỆC</h3>
                         <div className="d-flex">
                             <div className="flex-md-fill fontSize1-2vw opening-hour-container">Thứ Hai - Thứ Sáu<br/>Thứ Bảy<br/>Chủ Nhật</div>
-                            <div className="flex-md-fill fontSize1-2vw">17:00-20:00<br/>16:00-20:00<br/>15:00-20:00</div>
+                            <div className="flex-md-fill fontSize1-2vw">17h00 - 20h00<br/>08h30 - 11h00, 16h00 - 20h00<br/>08h30 - 11h00, 15h00 - 20h00</div>
                         </div>
                         <h3 className="fontRoboBold fontSize1-3vw pt-2">Khám tại nhà theo lịch đặt trước</h3>
                     </div>
