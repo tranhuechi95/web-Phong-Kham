@@ -20,7 +20,8 @@ const DoctorTeam = () => {
         (
             <p className="doctorCardBack">
                 <b>PGS. TS. BS. Phạm Thị Bích Đào</b><br/>
-                <i>Hơn 20 năm kinh nghiệm</i><br/>
+                <i>Bác sĩ nội trú khoá XX</i><br/>
+                <i>Hơn 25 năm kinh nghiệm</i><br/>
                 <b>1996</b> Nội trú bệnh viện, chuyên ngành Tai-Mũi-Họng<br/>
                 <b>2011</b> Tiến sĩ chuyên ngành Tai-Mũi-Họng<br/>
                 <b>2018</b> Được phong hàm Phó Giáo Sư Y Học<br/>
