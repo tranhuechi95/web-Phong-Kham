@@ -1,3 +1,5 @@
+import WorkingHoursTable from "./WorkingHoursTable";
+
 const Timeline = () => {
     return (
         <div>
@@ -13,11 +15,8 @@ const Timeline = () => {
                 <div className="row">
                     <div className="col-md-6 p-5 colorDarkBlue bgGreen">
                         <h3 className="fontRoboBold fontSize2vw">THỜI GIAN LÀM VIỆC</h3>
-                        <div className="d-flex">
-                            <div className="flex-md-fill fontSize1-2vw opening-hour-container">Thứ Hai - Thứ Sáu<br/>Thứ Bảy<br/>Chủ Nhật</div>
-                            <div className="flex-md-fill fontSize1-2vw">17h00 - 20h00<br/>08h30 - 11h00, 16h00 - 20h00<br/>08h30 - 11h00, 15h00 - 20h00</div>
-                        </div>
-                        <h3 className="fontRoboBold fontSize1-3vw pt-2">Khám tại nhà theo lịch đặt trước</h3>
+                        <WorkingHoursTable />
+                        <h4 className="fontRoboBold fontSize1-3vw pt-2">Khám tại nhà theo lịch đặt trước</h4>
                     </div>
                     <div className="col-md-6 p-5 colorGreen bgDarkBlue">
                         <h3 className="fontRoboBold fontSize2vw pb-3"><span className="colorWhite">Đội ngũ </span><span className="colorGreen">CHUYÊN GIA</span></h3>
