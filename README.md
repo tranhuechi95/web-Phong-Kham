@@ -201,3 +201,43 @@ Apache web server was running because `certbot` needs it to generate certificate
 To turn off Apache web server, type
 
         sudo systemctl stop httpd
+
+During certificate renewal, nginx server is running so Apache web server won't be able to start to serve certbot's challenges. Take the following steps:
+
+        sudo systemctl stop nginx // stop the nginx process
+        // modify the /etc/httpd/conf/httpd.conf file like indicated by the tutorial of setting up let's encrypt bot on Amazon Linux 2
+        sudo systemctl restart httpd // start the Apache web server
+        sudo certbot // run certbot program and answer its questions
+        // should have been able to obtain the new certificate by now
+        // apache web server is no longer needed
+        sudo systemctl stop httpd
+        sudo systemctl restart nginx // restart nginx server! done!
+
+Phew, I really don't want to do this again. According to the message certbot printed after the `sudo certbot` command completed, I just need to run
+
+        sudo certbot --certonly
+
+to obtain new or tweaked version of the certificate I have right now. Most importantly, to non-interactively renew ALL of my certificates, I'll just need to run
+
+        sudo certbot renew
+
+### Integrating Messenger Chat Plugin
+
+Different types of button for client's response:
+
+- Postback button
+- URL button
+- Call button
+
+Must include Facebook SDK for Javascript
+
+Facebook does not allow whitelisting of localhost --> use ngrok to expose website running in localhost to the internet,
+and provide a https url that we can use to test our FB features.
+
+Usage of ngrok:
+1. Download ngrok binary (or rather zipped package) from ngrok website and unzip it locally
+2. Run this command
+
+        ./ngrok authtoken 1yL5KlG9KsJX7MALH7PLoo3HbNk_7c231WbAJjC2CGqwsUPi4
+
+to add your authtoken to the default `ngrok.yml` configuration file (located at `/Users/leminhphuc/.ngrok2/ngrok.yml`). This will grant you access to more features and longer session times. Running tunnels will be listed on the status page of the dashboard.
