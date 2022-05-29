@@ -75,6 +75,13 @@ If deployment fails, `eb create` will notify you about it. You could check why b
 
 ### Deploy website to that EB environment
 
+Please type
+
+        npm run build
+        eb deploy
+
+Now cross your fingers and pray you won't have to debug potential errors.
+
 Things I learnt:
 
 1. Build the application locally and deploy the built app. This offers 2 advantages:
@@ -104,7 +111,13 @@ Things I learnt:
 
 If you've purchased and configured a custom domain name for your EB env, you can use HTTPS to allow users to connect to your web site securely. If you don't own a domain name, you can still use HTTPS with a self-signed certificate for development and testing purposes. HTTPS is a must for any application that transmits user data or login information.
 
-EB uses nginx (default) or Apache HTTPD as the reverse proxy to map your application to your ELB load balancer on port 80. EB provides a default proxy configuration that you can either extend or override completely with your own configuration. You can place configuration files under `.ebextensions` folder to configure the proxy server that passes traffic to your application to terminate HTTPS connection. This is useful if you want to use HTTPS with a single instance environment, or if you configure your load balancer to pass traffic through without decrypting it. However, if your application uses Amazon Linux 2, configuration files are expected to be placed under `.platform/nginx/` instead and all files under `.ebextensions` will be ignored ([source](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-linux-extend.html), "Reverse proxy configuration" section). EB also requires the `.platform/nginx` folder to have a very specific structure that mirrors the `/etc/nginx/` on your EC2 instance. I only understand the reason behind this after I SSH-ed into my EC2 instance:
+EB uses nginx (default) or Apache HTTPD as the reverse proxy to map your application to your ELB load balancer on port 80.
+EB provides a default proxy configuration that you can either extend or override completely with your own configuration.
+You can place configuration files under `.ebextensions` folder to configure the proxy server that passes traffic to your application to terminate HTTPS connection.
+This is useful if you want to use HTTPS with a single instance environment, or if you configure your load balancer to pass traffic through without decrypting it.
+However, if your application uses Amazon Linux 2, configuration files are expected to be placed under `.platform/nginx/` instead and all files under `.ebextensions` will be ignored ([source](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-linux-extend.html), "Reverse proxy configuration" section).
+EB also requires the `.platform/nginx` folder to have a very specific structure that mirrors the `/etc/nginx/` on your EC2 instance.
+I only understand the reason behind this after I SSH-ed into my EC2 instance:
 
 1. Upon deployment, EB takes the content of `.platform/nginx` and copy them to `/var/proxy/staging/nginx`, overwriting files with the same relative path with our files. E.g. if you have a file called `.platform/nginx/conf.d/00_application.conf`, that file will overwrite the file `/var/proxy/staging/nginx/conf.d/00_application.conf` on your EC2 instance if it exists.
 
@@ -157,9 +170,16 @@ I thought someone was really eavesdropping on me, but it turns out the host key 
 
 ### Missing of SSL cert files after an instance crashes/shuts down and a new instance comes up
 
-The instance in my EB environment shut down likely because I updated the Node platform version via the EB management console. OR it could have been because I deployed the app without building it first and the heavy load from running `npm run build` was too much for the EC2 instance. I don't really know.
+The instance in my EB environment shut down likely because I updated the Node platform version via the EB management console.
+OR it could have been because I deployed the app without building it first and the heavy load from running `npm run build` was too much for the EC2 instance.
+I don't really know.
 
-What I know is true is that I have to regenerate all these cert files, which is a pain. Follow the instruction [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#letsencrypt), and remember to use (`bacsidao.tmh` and `www.bacsidao.tmh`) instead of (`example.com` and `www.example.com`). A note though: `certbot` requires a running Apache web server process, but Apache web server can't be readily started on EC2 instance because the `/etc/httpd/conf.modules.d/00-mpm.conf` file was missing. I had to manually add it like this:
+What I know is true is that I have to regenerate all these cert files, which is a pain.
+Follow the instruction [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#letsencrypt), 
+and remember to use (`bacsidao.tmh` and `www.bacsidao.tmh`) instead of (`example.com` and `www.example.com`).
+A note though: `certbot` requires a running Apache web server process,
+but Apache web server can't be readily started on EC2 instance because the `/etc/httpd/conf.modules.d/00-mpm.conf` file was missing.
+I had to manually add it like this:
 ```
 # Select the MPM module which should be used by uncommenting exactly
 # one of the following LoadModule lines.
@@ -194,3 +214,43 @@ Apache web server was running because `certbot` needs it to generate certificate
 To turn off Apache web server, type
 
         sudo systemctl stop httpd
+
+During certificate renewal, nginx server is running so Apache web server won't be able to start to serve certbot's challenges. Take the following steps:
+
+        sudo systemctl stop nginx // stop the nginx process
+        // modify the /etc/httpd/conf/httpd.conf file like indicated by the tutorial of setting up let's encrypt bot on Amazon Linux 2
+        sudo systemctl restart httpd // start the Apache web server
+        sudo certbot // run certbot program and answer its questions
+        // should have been able to obtain the new certificate by now
+        // apache web server is no longer needed
+        sudo systemctl stop httpd
+        sudo systemctl restart nginx // restart nginx server! done!
+
+Phew, I really don't want to do this again. According to the message certbot printed after the `sudo certbot` command completed, I just need to run
+
+        sudo certbot --certonly
+
+to obtain new or tweaked version of the certificate I have right now. Most importantly, to non-interactively renew ALL of my certificates, I'll just need to run
+
+        sudo certbot renew
+
+### Integrating Messenger Chat Plugin
+
+Different types of button for client's response:
+
+- Postback button
+- URL button
+- Call button
+
+Must include Facebook SDK for Javascript
+
+Facebook does not allow whitelisting of localhost --> use ngrok to expose website running in localhost to the internet,
+and provide a https url that we can use to test our FB features.
+
+Usage of ngrok:
+1. Download ngrok binary (or rather zipped package) from ngrok website and unzip it locally
+2. Run this command
+
+        ./ngrok authtoken 1yL5KlG9KsJX7MALH7PLoo3HbNk_7c231WbAJjC2CGqwsUPi4
+
+to add your authtoken to the default `ngrok.yml` configuration file (located at `/Users/leminhphuc/.ngrok2/ngrok.yml`). This will grant you access to more features and longer session times. Running tunnels will be listed on the status page of the dashboard.

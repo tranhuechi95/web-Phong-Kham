@@ -19,8 +19,9 @@ const DoctorTeam = () => {
     const doctorDescriptions = [
         (
             <p className="doctorCardBack">
-                <h5>PGS. TS. BS. Phạm Thị Bích Đào</h5>
-                <i>Hơn 20 năm kinh nghiệm</i><br/>
+                <b>PGS. TS. BS. Phạm Thị Bích Đào</b><br/>
+                <i>Bác sĩ nội trú khoá XX</i><br/>
+                <i>Hơn 25 năm kinh nghiệm</i><br/>
                 <b>1996</b> Nội trú bệnh viện, chuyên ngành Tai-Mũi-Họng<br/>
                 <b>2011</b> Tiến sĩ chuyên ngành Tai-Mũi-Họng<br/>
                 <b>2018</b> Được phong hàm Phó Giáo Sư Y Học<br/>
@@ -29,25 +30,25 @@ const DoctorTeam = () => {
         ),
         (
             <p className="doctorCardBack doctorPartialInfo">
-                <h5>BS. Phạm Anh Dũng</h5>
+                <b>BS. Phạm Anh Dũng</b><br/>
                 <b>Nơi công tác</b> Bệnh viện Việt Nam - Cuba
             </p>
         ),
         (
             <p className="doctorCardBack doctorPartialInfo">
-                <h5>BS. Nguyễn Đức Linh</h5>
+                <b>BS. Nguyễn Đức Linh</b><br/>
                 <b>Nơi công tác</b> Bệnh viện Bạch Mai
             </p>
         ),
         (
             <p className="doctorCardBack doctorPartialInfo">
-                <h5>BS. Mai Thị Mai Phương</h5>
+                <b>BS. Mai Thị Mai Phương</b><br/>
                 <b>Nơi công tác</b> Bệnh viện Saint-Paul
             </p>
         ),
         (
             <p className="doctorCardBack doctorPartialInfo">
-                <h5>BS. Trần Văn Tâm</h5>
+                <b>BS. Trần Văn Tâm</b><br/>
                 <b>Nơi công tác</b> Bệnh viện Đại học Y Hà Nội
             </p>
         ),
@@ -66,6 +67,7 @@ const DoctorTeam = () => {
         (path, idx) => (
             <div
                 id={"doctorCard" + idx}
+                key={idx}
                 className="col doctorCard"
                 onClick={() => onCardClick(idx)}
             >

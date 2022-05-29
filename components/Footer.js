@@ -2,6 +2,7 @@ import { Component } from 'react';
 import 'isomorphic-fetch';
 import footerImg from '../static/assets/template/images/fb-Phong-Kham-2.jpg';
 import logo from '../static/assets/template/images/logo.jpg';
+import WorkingHoursTable from './WorkingHoursTable';
 
 const FooterLeft = () => {
     return (
@@ -31,12 +32,8 @@ const FooterMiddleForm = (props) => {
                 </div>
             </form> */}
             <h4 className="fontRoboBold fontSize1-5vw colorDarkBlue">THỜI GIAN LÀM VIỆC</h4>
-            <div className="fontRoboLight fontSize1-2vw">
-                <div className="d-flex">
-                    <div className="flex-md-fill">Thứ Hai - Thứ Sáu<br/>Thứ Bảy<br/>Chủ Nhật<br/>Khám tại nhà theo lịch đặt trước</div>
-                    <div className="flex-md-fill">17:00-20:00<br/>16:00-20:00<br/>15:00-20:00</div>
-                </div>
-            </div>
+            <WorkingHoursTable />
+            <h5 className="fontRoboBold fontSize1-5vw colorDarkBlue">Khám tại nhà theo lịch đặt trước</h5>
         </div>
     );
 }
@@ -47,12 +44,8 @@ const FooterMiddleFormSubmitted = () => {
             <h4 className="fontRoboBold fontSize1-5vw colorDarkBlue">ĐĂNG KÝ NHẬN TIN</h4>
             <h5 className="fontRoboLightItalic fontSize1-3vw px-2">Đăng ký nhận tin thành công</h5>
             <h4 className="fontRoboBold fontSize1-5vw colorDarkBlue pt-3">THỜI GIAN LÀM VIỆC</h4>
-            <div className="fontRoboLight fontSize1-2vw">
-                <div className="d-flex">
-                    <div className="flex-md-fill">Thứ Hai - Thứ Sáu<br/>Thứ Bảy<br/>Chủ Nhật<br/>Khám tại nhà theo lịch đặt trước</div>
-                    <div className="flex-md-fill">17:00-20:00<br/>16:00-20:00<br/>15:00-20:00</div>
-                </div>
-            </div>
+            <WorkingHoursTable />
+            <h5 className="fontRoboBold fontSize1-5vw colorDarkBlue pt-3">Khám tại nhà theo lịch đặt trước</h5>
         </div>
     );
 }

@@ -35,7 +35,7 @@ export function fetchAllArticlesImpl(dynamoDbClient, lastEvaluatedKey, paginated
             console.log(`Fetched ${data.Items.length}, concatenating to paginated schemas ...`)
             paginatedSchemas = paginatedSchemas.concat(data.Items)
             console.log(`Paginated schemas now has length ${paginatedSchemas.length}`)
-            fetchAllArticles(dynamoDbClient, data.LastEvaluatedKey, paginatedSchemas, setStatusCb, setArticlesCb)
+            fetchAllArticlesImpl(dynamoDbClient, data.LastEvaluatedKey, paginatedSchemas, setStatusCb, setArticlesCb)
         }
     });
 }

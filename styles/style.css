@@ -307,6 +307,15 @@ span {
   width: 100px;
 }
 
+/* for working hours table */
+.working-hours-table {
+  margin: 10px;
+}
+
+.working-hours-table td {
+  padding: 2px 7px 7px 2px;
+}
+
 /* collapsing transition class */
 .collapsing {
   transition: 1s;
@@ -433,7 +442,8 @@ item {
 
 /* for aboutUs image container*/
 .about-img-container {
-  max-width: 300px;
+  min-width: 300px;
+  max-width: 32vw;
   margin-bottom: 10px;
 }
 
